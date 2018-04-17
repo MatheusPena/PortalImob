@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+<head>
+	<title>Marketplace LAM</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Sign up and Subscribe Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="css/cadastro.css" rel='stylesheet' type='text/css'/>
+	<link href="css/cadastro-font.css" rel="stylesheet"/>
+	<link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700&amp;subset=devanagari,latin-ext" rel="stylesheet"/>
+</head>
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+      data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="color:white">Facilit IMOB</a>
+    </div>
+  <div class="collapse navbar-collapse " id="myNavbar">
+    <ul class="nav navbar-nav">
+      <li><a href="index.xhtml">Início</a></li>
+      <li class="active"><a href="cadastro.xhtml"><span class="glyphicon glyphicon-user"></span> Login/Cadastre-se</a></li>
+      <!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Imóveis<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Comprar</a></li>
+          <li><a href="#">Alugar</a></li>
+        </ul>
+      </li>-->
+      <li><a href="#">Fale Conosco</a></li>
+    </ul>
+
+  </div>
+  </div>
+</nav>
+
+<section class="main-container">
+<div class="layer">
+	<h1>Cadastre-se ou Entre</h1>
+	<div class="main-agile1">
+		<div class="w3layouts-main">
+
+						<h3>Possui uma conta?</h3>
+						<h:form action="#" method="post">
+							<div class="email">
+							<input placeholder="CPF" name="Email" type="email" required=""/>
+							<span class="icons i1"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+							</div>
+							<div class="email">
+							<input placeholder="Senha" name="Password" type="password" required=""/>
+							<span class="icons i2"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+							</div>
+							<div><a href="usuario.html">
+										<input type="submit" value="Entrar" name="login" href="usuario.xhtml"/>
+									</a>
+							</div>
+						</h:form>
+		</div>
+		<div class="main-agile">
+			<div class="alert-close"> </div>
+			<div class="content-wthree">
+				<h3 style="color:black;padding-top:10px;">Não possui uma conta?</h3>
+					
+				<h:form action="#" method="post">
+					<div class="container-fluid user-form">
+						<h3 style="color:black;font-size:30px;margin-top:40px;">Cadastre-se!</h3>
+						<div class="user-form" style="padding-top:57px;">
+					
+						<a href="cadastrouser.xhtml"><button type="button" class="btn btn-info ">Cadastrar</button></a>
+						</div>
+					
+					</div>
+				</h:form>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+<br></br>	
+</div>
+
+
+
+
+</section>
+</f:view>

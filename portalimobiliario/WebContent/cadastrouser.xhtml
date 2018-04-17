@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<h:head>
+
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>BootZard - Bootstrap Wizard Template</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet"
+			href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500" />
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet"
+			href="assets/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/css/form-elements.css" />
+		<link rel="stylesheet" href="css/cadastrouser.css" />
+		<link rel="shortcut icon" href="assets/ico/favicon.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144"
+			href="assets/ico/apple-touch-icon-144-precomposed.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114"
+			href="assets/ico/apple-touch-icon-114-precomposed.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72"
+			href="assets/ico/apple-touch-icon-72-precomposed.png" />
+		<link rel="apple-touch-icon-precomposed"
+			href="assets/ico/apple-touch-icon-57-precomposed.png" />
+
+	</h:head>
+
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" style="color: white">Facilit
+					IMOB</a>
+			</div>
+			<div class="collapse navbar-collapse " id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index.xhtml">Início</a></li>
+					<li class="active"><a href="cadastro.xhtml"><span
+							class="glyphicon glyphicon-user"></span> Login/Cadastre-se</a></li>
+					<li><a href="#">Fale Conosco</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Top content -->
+	<h:form styleClass="f1">
+
+		<div class="top-content">
+			<div class="container">
+				<div class="row">
+					<div
+						class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+
+						<p:outputPanel style="display:block">
+
+							<p:messages id="growl" showDetail="false" closable="true"
+								styleClass="msg" />
+
+							<h3>Cadastre-se!</h3>
+							<div class="f1-steps">
+								<div class="f1-progress">
+									<div class="f1-progress-line" data-now-value="16.66"
+										data-number-of-steps="3" style="width: 16.66%;"></div>
+								</div>
+								<div class="f1-step active">
+									<div class="f1-step-icon">
+										<i class="fa fa-key"></i>
+									</div>
+									<p>Conta</p>
+								</div>
+								<div class="f1-step">
+									<div class="f1-step-icon">
+										<i class="fa fa-user"></i>
+									</div>
+									<p>Dados Pessoais</p>
+								</div>
+								<div class="f1-step">
+									<div class="f1-step-icon">
+										<i class="fa fa-home"></i>
+									</div>
+									<p>Endereço</p>
+								</div>
+							</div>
+
+							<fieldset>
+								<h4>Crie sua conta:</h4>
+
+								<p:outputPanel style="display:block" styleClass="painelDados">
+
+									<div class="form-group">
+										<label class="sr-only" for="f1-first-name"></label>
+
+										<p:inputText widgetVar="txtEmail"
+											value="#{cadastroUsuarioBean.contato.email}"
+											styleClass="f1-first-name form-control"
+											placeholder="Digite o seu E-mail" />
+									</div>
+
+									<div class="form-group">
+
+										<label class="sr-only" for="f1-last-numPessoa">CPF</label>
+
+										<!-- <p:inputText widgetVar="txtNumPessoa"
+											onkeyup="mascara(this, mcpf)" maxlength="14"
+											value="#{cadastroUsuarioBean.usuario.numeroPessoa}"
+											styleClass="f1-first-name form-control"
+											placeholder="Digite o seu CPF" /> -->
+
+										<p:inputMask widgetVar="txtNumPessoa"
+											value="#{cadastroUsuarioBean.usuario.numeroPessoa}"
+											placeholder="Digite o seu CPF"
+											styleClass="f1-first-name form-control" mask="999.999.999-99" />
+
+									</div>
+
+									<div class="form-group">
+
+										<label class="sr-only" for="f1-last-name">Senha</label>
+
+										<p:password placeholder="Digite uma senha"
+											widgetVar="txtSenha" onkeyup="valor()"
+											styleClass="f1-last-name form-control txtSenha"
+											value="#{cadastroUsuarioBean.senha}" />
+
+									</div>
+
+									<div class="form-group">
+										<label class="sr-only" for="f1-last-name">Confirmar
+											Senha</label>
+
+										<p:password placeholder="Confirme a sua senha"
+											widgetVar="txtSenha" onkeyup="valor()"
+											styleClass="f1-last-name form-control txtConfirmarSenha"
+											value="#{cadastroUsuarioBean.confirmarSenha}" />
+
+									</div>
+
+									<div class="f1-buttons">
+										<!-- <button type="button" class="btn btn-next">Próximo</button> -->
+
+										<p:commandButton widgetVar="btnProximoDadosIniciais"
+											styleClass="btn btn-next btnProximoDadosIniciais"
+											value="Próximo" action="#{cadastroUsuarioBean.dadosIniciais()}"
+											update="growl"
+											oncomplete="setTimeout(function() { $('.msg').fadeOut(2000); }, 5000);" />
+									</div>
+
+								</p:outputPanel>
+							</fieldset>
+
+							<fieldset>
+								<h4>Digite os seus dados:</h4>
+								<p:outputPanel style="display:block" styleClass="painelDados">
+									<div class="form-group">
+										<label class="sr-only" for="f1-first-name">nome
+											completo</label> <input type="text" name="f1-first-name"
+											placeholder="Digite o seu nome completo"
+											class="f1-first-name form-control" id="f1-first-name"
+											value="#{cadastroUsuarioBean.usuario.nome}" />
+									</div>
+
+
+									<div class="form-group">
+										<label class="sr-only" for="f1-password">telefone</label>
+										<p:inputText value="#{cadastroUsuarioBean.contato.telCelular}"
+											placeholder="Digite o seu telefone"
+											onkeyup="mascara(this, mtel)" maxlength="15"
+											styleClass="f1-telefone form-control" />
+
+									</div>
+
+									<div class="form-group">
+
+										<h4>Selecione o seu convênio:</h4>
+
+										<h:selectOneMenu value="#{cadastroUsuarioBean.convenio}"
+											styleClass="form-control"
+											converter="omnifaces.SelectItemsConverter">
+
+											<f:selectItems var="c" value="#{convenioBean.convenios}"
+												itemLabel="#{c}" itemValue="#{c}" />
+
+											<!-- 	<f:selectItem itemLabel="Governo do Estado"
+												itemValue="Governo do Estado" />
+											<f:selectItem itemLabel="Prefeitura" itemValue="Prefeitura" />
+											<f:selectItem itemLabel="Governo Federal"
+												itemValue="Governo Federal" />
+											<f:selectItem itemLabel="Empresa Privada"
+												itemValue="Empresa Privada" />
+											<f:selectItem itemLabel="Aposentado(a)"
+												itemValue="Aposentado(a)" /> -->
+
+										</h:selectOneMenu>
+									</div>
+
+									<!-- <div class="form-group">
+										<h4>Selecione o seu convênio:</h4>
+										 <select class="form-control" size="1" >
+											<option>Governo do Estado</option>
+											<option>Prefeitura</option>
+											<option>Governo Federal</option>
+											<option>Empresa Privada</option>
+											<option>Aposentado(a)</option>
+										</select> 
+									</div> -->
+
+
+									<div class="f1-buttons">
+
+										<button type="button" class="btn btn-previous">Anterior</button>
+
+										<button type="button" class="btn btn-next"
+											onclick="dadosPessoais()">Próximo</button>
+
+										<p:remoteCommand name="dadosPessoais"
+											action="#{cadastroUsuarioBean.dadosPessoais()}" update="growl"
+											onstart="setTimeout(function() { $('.msg').fadeOut(2000); }, 5000);" />
+
+									</div>
+
+								</p:outputPanel>
+							</fieldset>
+
+							<fieldset>
+								<h4>Insira seu endereço:</h4>
+								<div class="form-group">
+									<label class="sr-only" for="f1-cep">cep</label>
+
+									<!-- <p:inputText onkeyup="mascara(this, mcep)" maxlength="9"
+										value="#{cadastroUsuarioBean.endereco.cep}"
+										styleClass="f1-cep form-control"
+										placeholder="Digite o seu CEP" /> -->
+
+									<p:inputMask value="#{cadastroUsuarioBean.endereco.cep}"
+										placeholder="Digite o seu CEP"
+										styleClass="f1-cep form-control" mask="99999-999" />
+
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="f1-estado">estado</label>
+
+									<h:selectOneMenu value="#{cadastroUsuarioBean.endereco.uf}"
+										styleClass="form-control">
+										<f:selectItems var="uf" value="#{cadastroUsuarioBean.estados()}"
+											itemLabel="#{uf}" itemValue="#{uf}" />
+									</h:selectOneMenu>
+
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="f1-cidade">cidade</label>
+
+									<p:inputText styleClass="f1-cidade form-control"
+										placeholder="Digite a sua cidade"
+										value="#{cadastroUsuarioBean.endereco.cidade}" />
+
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="f1-bairro">bairro</label>
+									<!--<input
+										type="text" name="f1-bairro" placeholder="Digite o seu bairro"
+										class="f1-bairro form-control" id="f1-bairro" />  -->
+
+									<p:inputText styleClass="f1-bairro form-control"
+										placeholder="Digite o seu bairro"
+										value="#{cadastroUsuarioBean.endereco.bairro}" />
+
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="f1-rua">rua</label>
+
+									<!-- <input
+										type="text" name="f1-rua" placeholder="Digite a sua rua"
+										class="f1-rua form-control" id="f1-rua" /> -->
+
+									<p:inputText styleClass="f1-rua form-control"
+										placeholder="Digite a sua rua"
+										value="#{cadastroUsuarioBean.endereco.rua}" />
+
+								</div>
+								<div class="f1-buttons">
+									<button type="button" class="btn btn-previous">Anterior</button>
+									<!-- <button type="submit" class="btn btn-submit">Finalizar</button> -->
+
+									<button type="button" class="btn btn-next"
+										onclick="finalizarCadastro()">Finalizar</button>
+
+									<p:remoteCommand name="finalizarCadastro"
+										action="#{cadastroUsuarioBean.finalizarCadastro()}" update="growl" />
+
+								</div>
+
+							</fieldset>
+
+						</p:outputPanel>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- <h:outputScript>
+											function dadosIniciais() {
+											
+											//var np = #{cadastroUsuarioBean.usuario.numeroPessoa}
+
+												var numPessoa = PF('txtNumPessoa').jq
+														.val();
+														
+														//np = numPessoa
+												
+												var email = PF('txtEmail').jq
+												.val();
+												
+												var senha = PF('txtSenha').jq
+												.val();
+											
+												//alert(numPessoa);
+												//alert(email);
+												//alert(senha);
+												
+									
+											}
+										</h:outputScript> -->
+
+
+
+
+		<!-- Javascript -->
+
+		<script>
+			$(function() {
+				PF('btnProximoDadosIniciais').disable();
+			});
+
+			function valor() {
+				var s = $('.txtSenha').val();
+				var cs = $('.txtConfirmarSenha').val();
+				if (s === cs) {
+					PF('btnProximoDadosIniciais').enable();
+					return true;
+				}
+				PF('btnProximoDadosIniciais').disable();
+				return false;
+			}
+		</script>
+
+		<script src="assets/js/jquery-1.11.1.min.js"></script>
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery.backstretch.min.js"></script>
+		<script src="assets/js/retina-1.1.0.min.js"></script>
+		<script src="assets/js/scripts.js"></script>
+		<script type="text/javascript" src="js/mascaras.js" />
+
+		<!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+	</h:form>
+
+</f:view>

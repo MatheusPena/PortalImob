@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<head>
+<title>Marketplace LAM</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/pesquisa.css" />
+	</head>
+
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" style="color: white">Facilit
+					IMOB</a>
+			</div>
+			<div class="collapse navbar-collapse " id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">Início</a></li>
+					<li><a href="cadastro.html"><span
+							class="glyphicon glyphicon-user"></span>Login/Cadastre-se</a></li>
+					<!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Imóveis<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Comprar</a></li>
+          <li><a href="#">Alugar</a></li>
+        </ul>
+      </li>-->
+					<li><a href="#">Fale Conosco</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<article class="index-intro">
+
+		<div class="jumbotron img-fluid"></div>
+	</article>
+	<div class="page-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-4">
+					<h:form>
+						<div class="input-group container-fluid">
+							<input type="text" class="form-control"
+								placeholder="Pesquise pelo seu imóvel aqui"
+								aria-describedby="searchbar" /> <span class="input-group-addon"
+								id="searchbar"><span class="glyphicon glyphicon-search"></span></span>
+						</div>
+					</h:form>
+				</div>
+
+				<div class="btn-filter">
+					<select id="blue">
+						<optgroup label="Maranhão">
+							<option selected="selected">Todos os Bairros</option>
+						</optgroup>
+
+						<optgroup label="São Luís">
+							<option>Cohama</option>
+							<option>Renascença</option>
+							<option>Cohab</option>
+						</optgroup>
+
+						<optgroup label="São José de Ribamar">
+							<option>Parque Vitória</option>
+							<option>Parque Jair</option>
+						</optgroup>
+					</select> <select id="green">
+						<optgroup label="Imóvel">
+							<option selected="selected">Todos os Imóveis</option>
+						</optgroup>
+
+						<optgroup label="Para Alugar">
+							<option selected="selected">Todos os Imóveis</option>
+							<option>Plaza Residence</option>
+						</optgroup>
+
+						<optgroup label="Para Comprar">
+							<option>Residence Evil</option>
+						</optgroup>
+					</select> <select id="red">
+						<optgroup label="Tipo de Imóvel">
+							<option selected="selected">Todos os Tipos</option>
+							<option>Casa</option>
+							<option>Apartamento</option>
+						</optgroup>
+					</select>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="wrapper">
+		<div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr01.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr02.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr03.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr04.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr05.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr06.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr07.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr08.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr09.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr10.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr11.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr12.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr13.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr14.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr15.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid container2">
+				<div class="row">
+					<div class="col-sm-3">
+						<img class="img-fluid img-thumbnail img-rounded"
+							src="imagens/scr16.jpg" alt="" />
+					</div>
+					<div class="col-sm-6 imob-dsc text-justify">
+						<h3>Plaza das Flores Village</h3>
+						<p>Estrada da Guaíba , s/n, Iguaíba, Iguaíba</p>
+						<p>Não é preciso entrar no Imperial Premium para já ficar
+							encantado. Sua imponente fachada chama a atenção pela modernidade
+							dos detalhes e pela harmonia que traz em seu projeto
+							paisagístico. Venha conhecer o Imperial Premium...</p>
+					</div>
+					<div class="col-sm-3 text-center buy-btn">
+						<button type="button" class="btn btn-light ">A partir de
+							R$ 100.000</button>
+						<a href="compra.xhtml" class="button button-small">Comprar</a>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+
+	<footer>
+		<div id="copyright" class="container">
+			<p>
+				Untitled. All rights reserved. | Photos by <a
+					href="http://fotogrph.com/">Fotogrph</a> | Design by <a
+					href="http://templated.co" rel="nofollow">TEMPLATED</a>.
+			</p>
+			<!--<ul class="contact">
+			<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+			<li><a href="#" class="icon icon-facebook"><span></span></a></li>
+			<li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+			<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+			<li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+		</ul>-->
+		</div>
+	</footer>
+
+</f:view>
+
+

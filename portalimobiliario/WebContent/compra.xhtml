@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<ui:composition template="_template.xhtml">
+		<ui:define name="body">
+
+			<h:head>
+				<title>Marketplace LAM</title>
+				<f:facet name="first">
+					<link rel="stylesheet" type="text/css" href="css/compra.css" />
+				</f:facet>
+
+			</h:head>
+
+			<article class="index-intro">
+				<div class="jumbotron img-fluid"></div>
+			</article>
+
+			<div class="page-wrapper">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<h:form id="navbar-form">
+								<div class="input-group container-fluid">
+									<input type="text" class="form-control"
+										placeholder="Pesquise pelo seu imóvel aqui"
+										aria-describedby="searchbar" /> <span
+										class="input-group-addon" id="searchbar"><span
+										class="glyphicon glyphicon-search"></span></span>
+								</div>
+							</h:form>
+						</div>
+
+						<div class="btn-filter">
+							<select id="blue">
+								<optgroup label="Maranhão">
+									<option selected="selected">Todos os Bairros</option>
+								</optgroup>
+
+								<optgroup label="São Luís">
+									<option>Cohama</option>
+									<option>Renascença</option>
+									<option>Cohab</option>
+								</optgroup>
+
+								<optgroup label="São José de Ribamar">
+									<option>Parque Vitória</option>
+									<option>Parque Jair</option>
+								</optgroup>
+							</select> <select id="green">
+								<optgroup label="Imóvel">
+									<option selected="selected">Todos os Imóveis</option>
+								</optgroup>
+
+								<optgroup label="Para Alugar">
+									<option selected="selected">Todos os Imóveis</option>
+									<option>Plaza Residence</option>
+								</optgroup>
+
+								<optgroup label="Para Comprar">
+									<option>Residence Evil</option>
+								</optgroup>
+							</select> <select id="red">
+								<optgroup label="Tipo de Imóvel">
+									<option selected="selected">Todos os Tipos</option>
+									<option>Casa</option>
+									<option>Apartamento</option>
+								</optgroup>
+							</select>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="wrapper">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-6 image-full ">
+							<div id="myCarousel" class="carousel slide" data-ride="carousel"
+								style="heigth: 100% !important;">
+								<!-- Indicators -->
+								<ol class="carousel-indicators">
+									<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+									<li data-target="#myCarousel" data-slide-to="1"></li>
+									<li data-target="#myCarousel" data-slide-to="2"></li>
+									<li data-target="#myCarousel" data-slide-to="3"></li>
+									<li data-target="#myCarousel" data-slide-to="4"></li>
+								</ol>
+
+								<!-- Wrapper for slides -->
+								<div class="carousel-inner img-fluid">
+
+									<ui:repeat var="r" value="#{imovelBean.residencias}"
+										varStatus="i">
+										<!-- Se o índice do varstatus aponta para o primeiro então esse será o active -->
+										<div class="#{i.index==0?'item active':'item img-fluid'}">
+											<img src="#{r.urlImagem}" alt="" />
+										</div>
+									</ui:repeat>
+								</div>
+
+								<!-- Left and right controls -->
+								<a class="left carousel-control" href="#myCarousel"
+									data-slide="prev"> <span
+									class="glyphicon glyphicon-chevron-left"></span> <span
+									class="sr-only">Previous</span>
+								</a> <a class="right carousel-control" href="#myCarousel"
+									data-slide="next"> <span
+									class="glyphicon glyphicon-chevron-right"></span> <span
+									class="sr-only">Next</span>
+								</a>
+							</div>
+
+						</div>
+						<div class="col-sm-6 imob-row">
+							<h2 class="text-center titulo">LANÇAMENTO VILLAGE LA BELLE</h2>
+							<p class="descricao1 text-center">Localizado na Estrada de
+								Ribamar, empreendimento com a famosa credibilidade da Canopus e
+								entrega garantida !</p>
+							<div class="container-fluid descricao2">
+								<ol>
+									<li>Apartamentos com 46,8 metros</li>
+									<li>Sala com ampla varanda</li>
+									<li>Cozinha Americana</li>
+									<li>2 Quartos amplos, sendo uma semi-suíte e área de
+										serviço</li>
+									<li>Banheiro social reversível</li>
+									<li>1 Vaga de garagem</li>
+									<li>SUPER Área de lazer completa</li>
+									<li>Piscina adulto com mais 20m e piscina infantil</li>
+									<li>Espaço fitness e sauna</li>
+									<li>Salão de jogos</li>
+									<li>Campo gramado</li>
+									<li>Playgroud, DUAS praças</li>
+									<li>Dois espaço zen</li>
+									<li>SUPER salão de festa.</li>
+								</ol>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class="container-fluid">
+							<div class="col-sm-6 imob-row">
+								<p class="text-center financiamento">
+									<button type="button" class="btn btn-success">Simule o
+										seu financiamento!</button>
+								</p>
+								<p>Para Renda Familiar a partir de R$ 1.300,00 (Faixa 1,5 do
+									Minha Casa Minha Vida)</p>
+
+								<p>entrega está prevista para 2º Semestre de 2020</p>
+
+								<p>Venha agendar sua visita e conferir!!</p>
+
+								<p>Facilit Imob 📞- 3877-9992 Fixo / 99221-9992 Vivo /
+									98828-8940 Oi</p>
+
+								<p>E-mail: atendimento@facilitimob.com.br</p>
+
+								<div class="adquirir text-center">
+									<a href="cadastro.xhtml" class="button button-small">Adquira
+										já</a>
+								</div>
+							</div>
+							<div class="col-sm-6 imob-row">
+								<div class="panel-group property-panel" id="accordion_prop_addr">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<a data-toggle="collapse" data-parent="#accordion_prop_addr"
+												href="#collapseTwo">
+												<h4 class="panel-title">Endereço</h4>
+											</a>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse in">
+											<div class="panel-body">
+
+												<div class="listing_detail col-md-4">
+													<strong>Endereço:</strong> Maioba do Jenipapeiro, S/N
+												</div>
+												<div class="listing_detail col-md-4">
+													<strong>Área:</strong> <a
+														href="http://www.imovelslz.com.br/city/maiobao/" rel="tag">Maiobão</a>
+												</div>
+												<div class="listing_detail col-md-4">
+													<strong>Área:</strong> <a
+														href="http://www.imovelslz.com.br/area/maioba-do-jenipapeiro/"
+														rel="tag">Maioba do Jenipapeiro</a>
+												</div>
+												<div class="listing_detail col-md-4">
+													<strong>Cidade:</strong> <a
+														href="http://www.imovelslz.com.br/state/paco-do-lumiar/"
+														rel="tag">Paço do Lumiar</a>
+												</div>
+												<div class="listing_detail col-md-4">
+													<strong>CEP:</strong> 65000-110
+												</div>
+												<div class="listing_detail col-md-4">
+													<strong>País:</strong> Brasil
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="panel-group property-panel"
+									id="accordion_prop_details">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<a data-toggle="collapse"
+												data-parent="#accordion_prop_details" href="#collapseOne">
+												<h4 class="panel-title" id="prop_det">Detalhes</h4>
+											</a>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<div class="listing_detail col-md-4" id="propertyid_display">
+													<strong>Código do Imóvel :</strong> 21767
+												</div>
+												<div class="listing_detail col-md-4">
+													<strong>Preço:</strong> <span
+														class="price_label price_label_before">A partir de</span>
+													R$ 123.181 <span class="price_label"></span>
+												</div>
+												<div class="listing_detail col-md-4">
+													<strong>Tamanho:</strong> 46 m<sup>2</sup>
+												</div>
+												<div class="listing_detail col-md-4">
+													<strong>Suítes:</strong> 1
+												</div>
+												<div class="listing_detail col-md-4">
+													<strong>Quartos:</strong> 1
+												</div>
+												<div class="listing_detail col-md-4">
+													<strong>Garagem:</strong> 1 carro
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<!-- Features and Ammenties -->
+
+								<div class="panel-group property-panel"
+									id="accordion_prop_features">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<a data-toggle="collapse"
+												data-parent="#accordion_prop_features" href="#collapseThree">
+												<h4 class="panel-title" id="prop_ame">Destaques</h4>
+											</a>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<div class="listing_detail col-md-4">
+													<i class="fa fa-check"></i>Área de Lazer
+												</div>
+												<div class="listing_detail col-md-4">
+													<i class="fa fa-check"></i>Piscina
+												</div>
+												<div class="listing_detail col-md-4">
+													<i class="fa fa-check"></i>Quadra de Esportes
+												</div>
+												<div class="listing_detail col-md-4">
+													<i class="fa fa-check"></i>Salão de Festas
+												</div>
+												<div class="listing_detail col-md-4">
+													<i class="fa fa-check"></i>Churrasqueira
+												</div>
+												<div class="listing_detail col-md-4">
+													<i class="fa fa-check"></i>Poço Artesiano
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<!-- end single content -->
+						</div>
+						<!-- end 9col container-->
+
+						<div id="googleMap"
+							style="width: 100%; height: 300px; margin-bottom: -128px"></div>
+						<script>
+							function myMap() {
+								var mapProp = {
+									center : new google.maps.LatLng(-2.532985,
+											-44.186452),
+									zoom : 16,
+								};
+								var map = new google.maps.Map(document
+										.getElementById("googleMap"), mapProp);
+							}
+						</script>
+
+						<script
+							src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARsmr3EipzVsPv-4Xt2nX2Nl8tyG6pAxk&amp;callback=myMap">
+							
+						</script>
+
+					</div>
+
+
+				</div>
+
+			</div>
+
+		</ui:define>
+	</ui:composition>
+</f:view>

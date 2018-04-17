@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+	<h:head>
+		
+		<title></title>
+		
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		
+		<link
+			href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial"
+			rel="stylesheet" />
+
+		<link href="css/default.css" rel="stylesheet" type="text/css"
+			media="all" />
+		<link href="css/fonts.css" rel="stylesheet" type="text/css"
+			media="all" />
+		<link type="text/css" rel="stylesheet"
+			href="/primefaces/faces/javax.faces.resource/primefaces.css?ln=primefaces" />
+
+
+
+		<f:facet name="first">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta name="viewport"
+				content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+			<meta name="apple-mobile-web-app-capable" content="yes" />
+
+
+			<h:outputScript library="js" name="bootstrap.js" />
+
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta name="viewport"
+				content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+			<meta name="apple-mobile-web-app-capable" content="yes" />
+			<h:outputScript library="js" name="bootstrap.js" />
+
+
+			<link rel="stylesheet" href="css/cabecalho-.css" type="text/css" />
+			<link rel="stylesheet" href="css/default.css" type="text/css" />
+			<link rel="shortcut icon" type="image/x-icon"
+				href="css/imagens/3918logo.ico" />
+			<link rel="shortcut icon"
+				href="#{resource['css/imagens/3918logo.ico']}" type="image/x-icon" />
+			<link rel="icon" href="#{resource['css/imagens/favicon.png']}"
+				type="image/x-icon" />
+			<link rel="stylesheet" href="css/rodape.css" type="text/css" />
+			<link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+			<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+			<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+			<link rel="stylesheet" href="css/estilos.css" type="text/css" />
+			<h:outputScript library="primefaces" name="jquery/jquery.js" />
+			<h:outputScript library="js" name="bootstrap-dropdown.js" />
+			<link rel="stylesheet" href="css/remover_icons.css" />
+
+		</f:facet>
+
+		<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+	</h:head>
+
+	<h:body>
+
+		<style>
+a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 8px 16px;
+}
+
+a:hover {
+	background-color: #38506A;
+	color: black;
+	padding: 12px 28px;
+	border-radius: 8px;
+	cursor: pointer !important;
+	color: black;
+	padding: 12px 28px;
+	border-radius: 8px;
+}
+
+.image:hover {
+	cursor: pointer !important;
+	border: 5px solid red !important;
+	opacity: 1 !important;
+}
+
+.image {
+	border: 2px solid !important;
+	opacity: 0.95 !important;
+}
+
+.ant {
+	background-color: light grey;
+	color: white;
+	type: cursor;
+}
+
+.prox {
+	background-color: light grey;
+	color: white;
+	type: cursor;
+}
+
+.arredondar-borda {
+	border-radius: 50%;
+}
+
+/* Removi todo o css do carrossel */
+.ui-carousel .ui-carousel-dropdown {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-dropdown option {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-footer {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-header {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-header .ui-carousel-header-title {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-button {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-page-link {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-page-link, .ui-carousel .ui-carousel-button {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-page-links {
+	display: none !important
+}
+
+.amostraResidencial {
+	width: 282px;
+	height: 176px;
+}
+
+/* Next e previous buttons */
+.ant, .prox {
+	cursor: pointer !important;
+	position: fixed !important;
+	z-index: 999 !important;
+	top: 50% !important;
+	width: auto !important;
+	padding: 16px !important;
+	color: white !important;
+	font-weight: bold !important;
+	font-size: 20px !important;
+	transition: 0.6s ease !important;
+	border-radius: 0 3px 3px 0 !important;
+	user-select: none !important;
+	-webkit-user-select: none !important;
+}
+
+.ant {
+	left: 0 !important;
+	border-radius: 3px 3px 3px 3px !important;
+}
+
+.prox {
+	right: 0 !important;
+	border-radius: 3px 3px 3px 3px !important;
+}
+
+.ant:hover, .prox:hover {
+	background-color: #38506A !important;
+}
+
+}
+@media ( max-width : 767px) {
+}
+
+/*menu suspenso do select*/
+.ui-selectonemenu-list {
+	background-color: #38506A !important;
+	color: white;
+}
+
+.ui-selectonemenu {
+	font-family: arial, tahoma !important;
+	font-size: 24px !important;
+	font-weight: normal !important;
+	text-align: center !important;
+}
+
+.ui-selectonemenu-item {
+	font-size: 20px !important;
+}
+
+/*cada item do menu suspenso do select*/
+.ui-selectonemenu-item:hover {
+	background-color: #3498DB !important;
+	background-repeat: no-repeat !important;
+	background-position: right 10px top 15px !important;
+	color: white !important;
+	width: auto !important;
+	font-family: arial, tahoma !important;
+	font-size: 18px !important;
+	font-weight: normal !important;
+	color: #fff !important;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+	border-radius: 3px !important;
+	-webkit-border-radius: 3px !important;
+	-webkit-appearance: none !important;
+	border: 0 !important;
+	outline: 0 !important;
+	-webkit-transition: 0.3s ease all !important;
+	-moz-transition: 0.3s ease all !important;
+	-ms-transition: 0.3s ease all !important;
+	-o-transition: 0.3s ease all !important;
+	transition: 0.3s ease all !important;
+}
+
+.ui-selectonemenu-item:hover ~ .blue {
+	background-color: red !important;
+}
+
+.ui-selectonemenu-item:hover+.blue {
+	background-color: red !important;
+}
+
+.ui-selectonemenu-item:hover>.blue {
+	background-color: red !important;
+}
+
+/*títulos do select*/
+.ui-selectonemenu-panel .ui-selectonemenu-items-wrapper {
+	font-size: 20px !important;
+	font-weight: bold !important;
+}
+
+/*estilizando o scrollbar*/
+::-webkit-scrollbar {
+	width: 1px !important;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 2px !important;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 2px !important;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+</style>
+
+
+		<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" style="color: white">Facilit
+					IMOB</a>
+			</div>
+			<div class="collapse navbar-collapse " id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">Início</a></li>
+					<li><a href="cadastro.html"><span
+							class="glyphicon glyphicon-user"></span>Login/Cadastre-se</a></li>
+
+					<li><a href="#">Fale Conosco</a></li>
+				</ul>
+
+			</div>
+		</div>
+		</nav>
+
+		<div id="pagina-inteira">
+
+			<p:outputPanel id="header-wrapper" style="display:block;">
+
+				<div id="header" class="container">
+					<div id="logo">
+						<h1>
+							<span class="icon icon-cog"></span><a href="#">Marketplace
+								LAM</a>
+						</h1>
+						<div id="menu">
+							<ul>
+								<li class="current_page_item"><a href="#" accesskey="1"
+									title="">Início</a></li>
+								<li><a href="#" accesskey="2" title="">Imóveis</a></li>
+								<li><a href="#" accesskey="3" title="">Login</a></li>
+								<li><a href="#" accesskey="4" title="">Fale Conosco</a></li>
+								<li><a href="#" accesskey="5" title="">Sobre Nós</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</p:outputPanel>
+
+
+			<div id="page-wrapper">
+
+				<center>
+
+
+					<p:panelGrid columns="3" layout="grid"
+						styleClass="ui-panelgrid-blank " style="width:80%!important">
+
+						<p:selectOneMenu styleClass="blue" dynamic="true">
+							<f:selectItems value="#{portalBean.filtro1}" />
+						</p:selectOneMenu>
+
+						<p:selectOneMenu styleClass="blue" dynamic="true">
+							<f:selectItems value="#{portalBean.filtro2}" />
+						</p:selectOneMenu>
+
+						<p:selectOneMenu styleClass="blue" dynamic="true">
+							<f:selectItems value="#{portalBean.filtro3}" />
+						</p:selectOneMenu>
+
+					</p:panelGrid>
+
+				</center>
+
+
+			</div>
+
+
+
+			<h:form>
+
+				<div class="wrapper" id="centro">
+
+					<p:inputText value="#{portalBean.indiceCarrossel}"
+						widgetVar="indiceCar" type="hidden"
+						styleClass="txtIndiceCarrossel" />
+
+					<p:remoteCommand name="acaoIndice"
+						actionListener="#{portalBean.valores()}"
+						process="@this @(.txtIndiceCarrossel)" />
+
+
+					<div id="fora">
+
+						<br /> <a class="prox" id="prox" onclick="proximo()">&raquo;</a>
+						<a class="ant" id="ant" onclick="anterior()">&laquo;</a>
+
+						<ui:repeat var="lista" value="#{portalBean.amostras}"
+							varStatus="it">
+
+							<div id="car#{it.index}">
+
+								<p:carousel styleClass="car#{it.index}" value="#{lista}" var="r"
+									numVisible="#{portalBean.itensVisiveis}" circular="true"
+									itemStyle="text-align:center !important;width: 100% !important;height: 450px !important"
+									effect="easeInStrong" responsive="true"
+									widgetVar="car#{it.index}" style="margin-left: 5px !important">
+
+									<p:panel
+										style="text-align:center !important;width: 100% !important;">
+										<h:panelGrid columns="1"
+											style="width: 100% !important;text-align:center !important">
+
+											<p:graphicImage url="#{r.urlImagem}" alt=""
+												styleClass="image amostraResidencial" />
+
+											<h3>#{r.nome}</h3>
+
+											<p:panel style="height: 75px!important">
+												<p>#{r.endereco}</p>
+											</p:panel>
+
+											<p:commandLink styleClass="button button-small"
+												style="position: relative !important;top: 15px !important"
+												value="Saiba Mais" />
+
+										</h:panelGrid>
+									</p:panel>
+
+								</p:carousel>
+
+							</div>
+
+						</ui:repeat>
+
+
+
+						<!-- <p:dataGrid var="r" value="#{portalBean.residenciais}" columns="4"
+					widgetVar="dataGridResidenciais_" layout="grid" rows="4"
+					paginator="true" id="r" 
+					paginatorTemplate="  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+					rowsPerPageTemplate="6,12,16">
+
+					<p:panel style="text-align:center">
+						<h:panelGrid columns="1" style="width:100%">
+
+							<p:graphicImage url="#{r.urlImagem}" alt=""
+								styleClass="image image-full" />
+
+							<h3>#{r.nome}</h3>
+
+							<p:panel style="height: 75px!important">
+								<p>#{r.endereco}</p>
+							</p:panel>
+							
+							<p:commandLink styleClass="button button-small"
+								style="position: relative !important;top: 15px !important"
+								value="Saiba Mais" />
+
+						</h:panelGrid>
+					</p:panel>
+
+
+				</p:dataGrid> -->
+
+					</div>
+
+				</div>
+
+			</h:form>
+
+
+			<div id="wrapper2">
+				<div id="tools">
+					<div class="title">
+						<h2>Conheça Nossos Setores</h2>
+					</div>
+					<ul class="tools">
+						<li><a href="#" class="icon icon-legal"></a></li>
+						<li><a href="#" class="icon icon-random"></a></li>
+						<li><a href="#" class="icon icon-key"></a></li>
+						<li><a href="#" class="icon icon-wrench"></a></li>
+						<li><a href="#" class="icon icon-cut"></a></li>
+						<li><a href="#" class="icon icon-filter"></a></li>
+						<li><a href="#" class="icon icon-lock"></a></li>
+					</ul>
+
+				</div>
+			</div>
+			<div id="copyright" class="container">
+				<p>
+					&copy; Untitled. All rights reserved. | Photos by <a
+						href="http://fotogrph.com/">Fotogrph</a> | Design by <a
+						href="http://templated.co" rel="nofollow">TEMPLATED</a>.
+				</p>
+				<!--<ul class="contact">
+			<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+			<li><a href="#" class="icon icon-facebook"><span></span></a></li>
+			<li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+			<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+			<li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+		</ul>-->
+			</div>
+
+		</div>
+
+		<script>
+			
+		</script>
+
+
+		<!-- Javascript no final da página -->
+		<h:outputScript>
+		
+		//<![CDATA[
+		
+			//Função do botão paginação dos corrosseis (para frente)
+		function proximo() {
+			var tam = '#{portalBean.amostras.size()}';
+			for (var i = 0; i < tam; i++) {
+				var n = 'car'.concat(i);
+				var paginaAtual = PF(n).page;
+				if (paginaAtual === (PF(n).totalPages - 1)) {
+					PF(n).setPage(0);
+				} else {
+					PF(n).setPage(PF(n).page + 1);
+				}
+				
+				PF('indiceCar').jq.val(paginaAtual+1);
+			
+			}
+			
+			acaoIndice();
+		}
+
+		//Função do botão paginação dos corrosseis (para trás)
+		function anterior() {
+			var tam = '#{portalBean.amostras.size()}';
+			for (var i = 0; i < tam; i++) {
+				var n = 'car'.concat(i);
+				var paginaAtual = PF(n).page;
+				if (paginaAtual !== 0) {
+					PF(n).setPage(paginaAtual - 1)
+				}
+
+				//Se zero vai para o final
+				if (paginaAtual === 0) {
+					PF(n).setPage(PF(n).totalPages - 1)
+				}
+				
+				PF('indiceCar').jq.val(paginaAtual+1);
+			}
+			acaoIndice();
+		}
+
+		jQuery(function() {
+		
+			var tam = '#{portalBean.amostras.size()}';
+
+			for (var i = 0; i < tam; i++) {
+				var n = 'car'.concat(i); //id dentro da iteração
+
+				var elemento = document.getElementById(n);
+				var mc = new Hammer(elemento);
+
+				//Aqui eu descarto o evento tap, não vou precisar
+				mc.on("panleft panright tap press", function(ev) {
+
+					if (ev.type === 'panright') {//swipe da direita para esquerda
+						proximo();
+					}
+
+					if (ev.type === 'panleft') {//swipe da squerda para a direita
+						anterior();
+					}
+
+				});
+			}
+		});
+		
+		
+		//Função que controla a visibilidade das setas
+		
+	
+			$('#prox').css('opacity', '1');
+				$('#ant').css('opacity', '1');
+			
+			$(function() {
+				
+				var tam = '#{portalBean.amostras.size()}';
+				var q = '#{portalBean.residenciais.size()}'
+
+				//alert('TAM'+tam);
+				//alert('Q'+q);
+
+				var itens = '#{portalBean.itensVisiveis}';
+
+				//Verifica se a quantidade de elementos na tela é o total,
+				//o 4 é o número de elementos visíveis do carrossel se
+				//mudar lá deve ser mudado aqui também
+				if (q <= (itens * tam)) {
+
+					$('#prox').css('opacity', '0');
+					$('#ant').css('opacity', '0');
+
+				} else {
+
+
+					$('#prox').css('opacity', '1');
+					$('#ant').css('opacity', '1');
+
+					//Exceções para opacity
+
+					$('#header-wrapper').hover(function() {
+						$('#ant').css('opacity', '0');
+					}, function() {
+						// on mouseout, reset the background colour
+						$('#ant').css('opacity', '1');
+					});
+
+					$('#page-wrapper').hover(function() {
+						$('#ant').css('opacity', '0');
+					}, function() {
+						// on mouseout, reset the background colour
+						$('#ant').css('opacity', '1');
+					});
+
+					$('#wrapper2').hover(function() {
+						$('#ant').css('opacity', '0');
+					}, function() {
+						// on mouseout, reset the background colour
+						$('#ant').css('opacity', '1');
+					});
+
+					$('#copyright').hover(function() {
+						$('#ant').css('opacity', '0');
+					}, function() {
+						// on mouseout, reset the background colour
+						$('#ant').css('opacity', '1');
+					});
+
+					$('#header-wrapper').hover(function() {
+						$('#prox').css('opacity', '0');
+					}, function() {
+						$('#prox').css('opacity', '1');
+					});
+
+					$('#page-wrapper').hover(function() {
+						$('#prox').css('opacity', '0');
+					}, function() {
+						$('#prox').css('opacity', '1');
+					});
+
+					$('#wrapper2').hover(function() {
+						$('#prox').css('opacity', '0');
+					}, function() {
+						$('#prox').css('opacity', '1');
+					});
+
+					$('#copyright').hover(function() {
+						$('#prox').css('opacity', '0');
+					}, function() {
+						$('#prox').css('opacity', '1');
+					});
+
+				}
+
+			});
+			
+		//]]>
+		</h:outputScript>
+		<script type="text/javascript"
+			src="/primefaces/faces/javax.faces.resource/jquery/jquery.js?ln=primefaces"></script>
+		<script type="text/javascript"
+			src="/primefaces/faces/javax.faces.resource/primefaces.js?ln=primefaces"></script>
+		<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+	</h:body>
+
+
+</f:view>

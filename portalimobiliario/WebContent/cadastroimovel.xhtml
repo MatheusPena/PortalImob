@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+<head>
+	<title>Marketplace LAM</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Sign up and Subscribe Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="css/cadastroimovel.css" rel='stylesheet' type='text/css'/>
+	<link href="css/cadastro-font.css" rel="stylesheet"/>
+	<link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700&amp;subset=devanagari,latin-ext" rel="stylesheet"/>
+</head>
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+      data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="color:white">Facilit IMOB</a>
+    </div>
+  <div class="collapse navbar-collapse " id="myNavbar">
+    <ul class="nav navbar-nav">
+      <li><a href="index.xhtml">Início</a></li>
+      <li class="active"><a href="cadastro.xhtml"><span class="glyphicon glyphicon-user"></span> Login/Cadastre-se</a></li>
+      <!--<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Imóveis<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Comprar</a></li>
+          <li><a href="#">Alugar</a></li>
+        </ul>
+      </li>-->
+      <li><a href="#">Fale Conosco</a></li>
+    </ul>
+
+  </div>
+  </div>
+</nav>
+
+<div class="container">  
+  <form id="contact" action="" method="post">
+    <h3>Cadastrar Imóvel</h3>
+    <h4>Dados do Imóvel</h4>
+    <fieldset>
+      <input placeholder="Nome do imóvel" type="text" tabindex="1" required="required" autofocus="autofocus"/>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Descrição do imóvel" tabindex="2" required="required"></textarea>
+    </fieldset>
+       <fieldset>
+      <input placeholder="Preço do imóvel" type="text" tabindex="5" required="required"/>
+    </fieldset>
+     <h4>Endereço do Imóvel</h4>
+    <fieldset>
+      <input placeholder="Estado" type="text" tabindex="3" required="required"/>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Cidade" type="text" tabindex="4" required="required"/>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Bairro" type="text" tabindex="5" required="required"/>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Rua" type="text" tabindex="5" required="required"/>
+    </fieldset>
+    <fieldset>
+      <input placeholder="CEP" type="text" tabindex="5"/>
+    </fieldset>
+    <h4>Imagens do imóvel</h4>
+    <div>
+  	  <input type="file" name="image"/>
+  	  <input type="file" name="image"/>
+  	  <input type="file" name="image"/>
+  	  <input type="file" name="image"/>
+  	</div>
+  	<br></br>
+ 
+
+    
+    
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
+    </fieldset>
+  </form>
+</div>
+  
+  
+</f:view>

@@ -1,0 +1,47 @@
+
+/* Removi todo o css do carrossel */
+.ui-carousel .ui-carousel-dropdown {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-dropdown option {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-footer {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-header {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-header .ui-carousel-header-title {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-button {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-page-link {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-page-link, .ui-carousel .ui-carousel-button {
+	display: none !important
+}
+
+.ui-carousel .ui-carousel-page-links {
+	display: none !important
+}
+
+.ui-carousel  {
+	background-image: none !important;
+	text-align: center
+}
+
+
+
+
+
