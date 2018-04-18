@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+
+	<h:head>
+
+		<f:facet name="first">
+
+			<link rel="stylesheet" type="text/css" href="css/slick.css" />
+			<link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+
+		</f:facet>
+
+	</h:head>
+
+	<ui:composition template="_template.xhtml">
+		<ui:define name="body">
+
+			<!-- Demo styles -->
+			<style>
+.slick-slide {
+	outline: none !important;
+}
+
+.slick-slide:focus {
+	outline: none;
+}
+
+.row {
+	width: 100%;
+	margin: 20px auto;
+}
+</style>
+
+			<article class="index-intro">
+				<div class="jumbotron img-fluid"></div>
+			</article>
+			<div class="page-wrapper">
+
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-4">
+							<h:form id="navbar-form">
+								<div class="input-group container-fluid">
+									<input type="text" class="form-control"
+										placeholder="Pesquise pelo seu imóvel aqui"
+										aria-describedby="searchbar" /> <span
+										class="input-group-addon" id="searchbar"><span
+										class="glyphicon glyphicon-search"></span></span>
+								</div>
+							</h:form>
+						</div>
+
+						<div class="btn-filter">
+							<select id="blue">
+								<optgroup label="Maranhão">
+									<option selected="selected">Todos os Bairros</option>
+								</optgroup>
+
+								<optgroup label="São Luís">
+									<option>Cohama</option>
+									<option>Renascença</option>
+									<option>Cohab</option>
+								</optgroup>
+
+								<optgroup label="São José de Ribamar">
+									<option>Parque Vitória</option>
+									<option>Parque Jair</option>
+								</optgroup>
+							</select> <select id="green">
+								<optgroup label="Imóvel">
+									<option selected="selected">Todos os Imóveis</option>
+								</optgroup>
+
+								<optgroup label="Para Alugar">
+									<option selected="selected">Todos os Imóveis</option>
+									<option>Plaza Residence</option>
+								</optgroup>
+
+								<optgroup label="Para Comprar">
+									<option>Residence Evil</option>
+								</optgroup>
+							</select> <select id="red">
+								<optgroup label="Tipo de Imóvel">
+									<option selected="selected">Todos os Tipos</option>
+									<option>Casa</option>
+									<option>Apartamento</option>
+								</optgroup>
+							</select>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="wrapper">
+				<div class="container-fluid">
+					<div class="row">
+
+						<div class="btn btn-primary btn-left prox" id="prox"
+							onclick="proximo()">
+							<a><span class="glyphicon glyphicon-chevron-left"
+								style="color: white;"></span></a>
+						</div>
+
+						<div class="btn btn-primary btn-right ant" id="ant"
+							onclick="anterior()">
+							<a><span class="glyphicon glyphicon-chevron-right"
+								style="color: white;"></span></a>
+						</div>
+
+						<script type="text/javascript" src="js/slick.min.js"></script>
+						
+						<div class="row carousel">
+							<!-- <ui:repeat var="construtora"
+								value="#{portalConstrutoraBean.construtoras}" varStatus="it"> -->
+							<c:forEach items="#{portalConstrutoraBean.construtoras}"
+								var="construtora">
+
+								<p:panel styleClass="text-center image box image-full imob-row"
+									style="text-align:center !important;width: 100% !important;">
+
+									<h:graphicImage 
+										value="imagemconstrutora?url=#{construtora.urlImagem}"
+										alt="" styleClass="img-fluid img-thumbnail img-rounded" />
+										
+										<h3>#{construtora.nomeFantasia}</h3>
+
+										<p class="endereco">#{construtora.endereco==null ? 'ENDERECO' : construtora.endereco}</p>
+
+										<p:panelGrid columns="1" layout="grid"
+											styleClass="ui-panelgrid-blank ">
+											<button type="button" class="btn btn-light ">#{construtora.anuncio}</button>
+											<a href="compra.xhtml" class="button button-small">Comprar</a>
+										</p:panelGrid>
+								</p:panel>
+							</c:forEach>
+							<!--</ui:repeat>  -->
+						</div>
+
+						<script type="text/javascript">
+							var slickopts = {
+								dots : true,
+								lazyLoad : 'ondemand',
+								prevArrow : $('.ant'),
+								nextArrow : $('.prox'),
+								slidesToShow : 4,
+								slidesToScroll : 4,
+								rows : 2, // Removes the linear order. Would expect card 5 to be on next row, not stacked in groups.
+
+								responsive : [ {
+									breakpoint : 1024,
+									settings : {
+										slidesToShow : 3,
+										slidesToScroll : 3,
+										infinite : true,
+										dots : true
+									}
+								}, {
+									breakpoint : 600,
+									settings : {
+										slidesToShow : 2,
+										slidesToScroll : 2
+									}
+								}, {
+									breakpoint : 480,
+									settings : {
+										slidesToShow : 1,
+										slidesToScroll : 1
+									}
+								}
+								// You can unslick at a given breakpoint now by adding:
+								// settings: "unslick"
+								// instead of a settings object
+								]
+							};
+
+							$('.carousel').slick(slickopts);
+						</script>
+
+
+						<!-- <p:inputText value="#{construtoraBean.indiceCarrossel}"
+								widgetVar="indiceCar" type="hidden"
+								styleClass="txtIndiceCarrossel" />
+
+							<p:remoteCommand name="acaoIndice" update="@(imob-row)"
+								actionListener="#{construtoraBean.valores()}"
+								process="@this @(.txtIndiceCarrossel) @(.carrossel)" />
+								
+							<ui:repeat var="lista" value="#{construtoraBean.amostras}"
+								varStatus="it">
+
+								<div id="car#{it.index}" class="inner">
+
+									<p:carousel styleClass="car#{it.index} carrossel" value="#{lista}"
+										var="imovel" numVisible="#{construtoraBean.itensVisiveis}"
+										circular="true" effect="easeInStrong"
+										widgetVar="car#{it.index}" itemStyle="text-align:center"
+										responsive="true">
+
+										<p:panel
+											styleClass="text-center image box image-full imob-row"
+											style="text-align:center !important;width: 100% !important;">
+
+											<p:graphicImage url="#{imovel.urlImagem}" alt=""
+												styleClass="img-fluid img-thumbnail img-rounded" />
+
+											<h3>#{imovel.nomeFantasia}</h3>
+											
+											<p class="endereco">ENDERECO</p>
+
+
+											<button type="button" class="btn btn-light ">#{imovel.anuncio}</button>
+											
+											<a href="compra.xhtml" class="button button-small">Comprar</a>
+
+
+										</p:panel>
+
+									</p:carousel>
+
+								</div>
+
+							</ui:repeat> -->
+
+					</div>
+				</div>
+			</div>
+
+			<!-- https://owlcarousel2.github.io/OwlCarousel2/demos/lazyLoad.html  -->
+			<!-- Javascript no final da página -->
+			<!--  <h:outputScript>
+		
+		//<![CDATA[
+		
+			//Função do botão paginação dos corrosseis (para frente)
+		function proximo() {
+			var tam = '#{portalConstrutoraBean.amostras.size()}';
+			for (var i = 0; i < tam; i++) {
+				var n = 'car'.concat(i);
+				var paginaAtual = PF(n).page;
+				if (paginaAtual === (PF(n).totalPages - 1)) {
+					PF(n).setPage(0);
+				} else {
+					PF(n).setPage(PF(n).page + 1);
+				}
+				PF('indiceCar').jq.val(paginaAtual+1);
+			}
+			
+			acaoIndice();
+		}
+
+		//Função do botão paginação dos corrosseis (para trás)
+		function anterior() {
+			var tam = '#{portalConstrutoraBean.amostras.size()}';
+			
+			for (var i = 0; i < tam; i++) {
+				var n = 'car'.concat(i);
+				var paginaAtual = PF(n).page;
+				if (paginaAtual !== 0) {
+					PF(n).setPage(paginaAtual - 1)
+				}
+
+				//Se zero vai para o final
+				if (paginaAtual === 0) {
+					PF(n).setPage(PF(n).totalPages - 1)
+				}
+				
+				PF('indiceCar').jq.val(paginaAtual+1);
+			}
+			acaoIndice();
+		}
+
+		jQuery(function() {
+		
+			var tam = '#{portalConstrutoraBean.amostras.size()}';
+
+			for (var i = 0; i < tam; i++) {
+				var n = 'car'.concat(i); //id dentro da iteração
+
+				var elemento = document.getElementById(n);
+				var mc = new Hammer(elemento);
+
+				//Aqui eu descarto o evento tap, não vou precisar
+				mc.on("panleft panright tap press", function(ev) {
+
+					if (ev.type === 'panright') {//swipe da direita para esquerda
+						anterior();
+					}
+
+					if (ev.type === 'panleft') {//swipe da squerda para a direita
+						
+						proximo();
+					}
+
+				});
+			}
+		});
+		
+		//]]>
+
+			</h:outputScript>-->
+			<script type="text/javascript"
+				src="/primefaces/faces/javax.faces.resource/jquery/jquery.js?ln=primefaces"></script>
+			<script type="text/javascript"
+				src="/primefaces/faces/javax.faces.resource/primefaces.js?ln=primefaces"></script>
+			<script src="https://hammerjs.github.io/dist/hammer-.js"></script>
+		</ui:define>
+	</ui:composition>
+
+</f:view>
