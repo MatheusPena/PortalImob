@@ -1,4 +1,3 @@
-
 /* Removi todo o css do carrossel */
 .ui-carousel .ui-carousel-dropdown {
 	display: none !important
@@ -36,12 +35,274 @@
 	display: none !important
 }
 
-.ui-carousel  {
+.ui-carousel {
 	background-image: none !important;
 	text-align: center
 }
 
+.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td {
+	border-style: none;
+}
 
 
+/*http://cssdeck.com/labs/twitter-bootstrap-pagination-and-pager*/
+
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  background-color: #ffffff;
+	
+  padding: 0 20px;
+}
+
+
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+a:hover {
+  color: #005580 !important;
+  text-decoration: underline;
+}
+
+h2 { padding-top: 20px; }
+h2:first-of-type { padding-top: 0; }
+ul { padding: 0; }
+
+.ui-paginator {
+  height: 36px !important;
+  margin: 18px 0 !important;
+}
+.ui-paginator ul {
+  display: inline-block !important;
+  *display: inline !important;
+  /* IE7 inline-block hack */
+
+  *zoom: 1 !important;
+  margin-left: 0 !important;
+  margin-bottom: 0 !important;
+  -webkit-border-radius: 3px !important;
+  -moz-border-radius: 3px !important;
+  border-radius: 3px !important;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+.ui-paginator li {
+  display: inline !important;
+}
+.ui-paginator a {
+  padding: 0 14px !important;
+  line-height: 34px !important;
+  text-decoration: none !important;
+  border: 1px solid #ddd !important;
+  border-left-width: 1 !important;
+}
+.ui-paginator a:hover,
+.ui-paginator .active a {
+  background-color: #f5f5f5 !important;
+}
+.ui-paginator .active a {
+  color: #999999 !important;
+  cursor: default !important;
+}
+.ui-paginator .disabled span,
+.ui-paginator .disabled a,
+.ui-paginator .disabled a:hover {
+  color: #999999 !important;
+  background-color: transparent !important;
+  cursor: default !important;
+}
+.ui-paginator li:first-child a {
+  border-left-width: 1px !important;
+  -webkit-border-radius: 3px 0 0 3px !important;
+  -moz-border-radius: 3px 0 0 3px !important;
+  border-radius: 3px 0 0 3px !important;
+}
+.ui-paginator li:last-child a {
+  -webkit-border-radius: 0 3px 3px 0 !important;
+  -moz-border-radius: 0 3px 3px 0 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+.ui-paginator-centered {
+  text-align: center !important;
+}
+.ui-paginator-right {
+  text-align: right !important;
+}
+
+/*
+
+.ui-paginator .ui-paginator-page:before,
+.ui-paginator .ui-paginator-page:after {
+  display: table;
+  content: "";
+}
+.ui-paginator .ui-paginator-page:after {
+  clear: both;
+}
+.ui-paginator .ui-paginator-page li {
+  display: inline;
+}
+.ui-paginator .ui-paginator-page a {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+.ui-paginator .ui-paginator-page a:hover {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+.ui-paginator .ui-paginator-page .next a {
+  float: right;
+}
+.ui-paginator .ui-paginator-page .previous a {
+  float: left;
+}
+.ui-paginator .ui-paginator-page .disabled a,
+.ui-paginator .ui-paginator-page .disabled a:hover {
+  color: #999999;
+  background-color: #fff;
+  cursor: default;
+}
+
+
+
+.ui-paginator-page {
+  margin-left: 0 !important;
+  margin-bottom: 18px !important;
+  list-style: none !important;
+  text-align: center !important;
+  *zoom: 1 !important;
+}
+
+*/
+
+
+.ui-paginator .ui-paginator-page:before,
+.ui-paginator .ui-paginator-page:after {
+  display: table;
+  content: "";
+}
+.ui-paginator .ui-paginator-page:after {
+  clear: both;
+}
+.ui-paginator .ui-paginator-page li {
+  display: inline;
+}
+.ui-paginator .ui-paginator-page a {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+.ui-paginator .ui-paginator-page a:hover {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+.ui-paginator .ui-paginator-page .next a {
+  float: right;
+}
+.ui-paginator .ui-paginator-page .previous a {
+  float: left;
+}
+.ui-paginator .ui-paginator-page .disabled a,
+.ui-paginator .ui-paginator-page .disabled a:hover {
+  color: #999999;
+  background-color: #fff;
+  cursor: default;
+}
+
+
+/*--------------*/
+
+@CHARSET "ISO-8859-1" !important;
+
+.ui-icon {
+	background-image: none !important;
+}
+
+/*
+Basta remover os ícones para aplicar o awesome icons (depois de feita a cofiguração)
+*/
+
+.ui-datatable .ui-sortable-column-icon.ui-icon {
+	background-image: none;
+	text-indent: 0;
+	margin: 0 0 0 .5em;
+}
+
+.ui-paginator>span:before, .ui-sortable-column-icon:before {
+	font-family: FontAwesome;
+}
+
+.ui-paginator>span>span, .ui-paginator a span {
+	display: none;
+}
+
+.ui-paginator-first:before {
+	content: '\f049';
+	font-family: FontAwesome;
+}
+
+.ui-paginator-prev:before {
+	content: '\f048';
+	font-family: FontAwesome;
+}
+
+.ui-paginator-next:before {
+	content: '\f051';
+	font-family: FontAwesome;
+}
+
+.ui-paginator-last:before {
+	content: '\f050';
+	font-family: FontAwesome;
+}
+
+.ui-icon-carat-2-n-s:before {
+	content: '\f0dc';
+	font-family: FontAwesome;
+}
+
+.ui-icon-carat-2-n-s.ui-icon-triangle-1-n:before {
+	content: '\f0de';
+	font-family: FontAwesome;
+}
+
+.ui-icon-carat-2-n-s.ui-icon-triangle-1-s:before {
+	content: '\f0dd';
+	font-family: FontAwesome;
+}
+
+.ui-paginator .ui-state-disabled {
+	opacity: .25;
+	font-family: FontAwesome;
+}
+
+.ui-selectonemenu-trigger span.ui-icon-triangle-1-s {
+	background-image: none !important;
+}
+
+.ui-button .ui-icon {
+	background-image: none !important;
+}
+
+/*
+  https://github.com/adminfaces/admin-designer/blob/master/src/main/resources/less/primefaces-admin/components/selectonemenu.less
+  */
+
+/*https://www.primefaces.org/eos/rio/font-icons.xhtml*/
 
 
