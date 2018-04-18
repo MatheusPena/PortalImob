@@ -8,6 +8,9 @@ body {
     text-align: center;
     background:url(../imagens/cadastrobg3.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
 }
 
 strong { font-weight: 500; }

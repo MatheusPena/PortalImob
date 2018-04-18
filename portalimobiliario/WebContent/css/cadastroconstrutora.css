@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -6,8 +5,11 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
-    background:url(../imagens/cadastrobg3.jpg);
+    background:url(../imagens/cadastrobg4.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
 }
 
 strong { font-weight: 500; }
@@ -89,7 +91,7 @@ img { max-width: 100%; }
 .f1-progress { position: absolute; top: 24px; left: 0; width: 100%; height: 1px; background: #ddd; }
 .f1-progress-line { position: absolute; top: 0; left: 0; height: 1px; background: #f35b3f; }
 
-.f1-step { position: relative; float: left; width: 33.333333%; padding: 0 5px; }
+.f1-step { position: relative; float: left; width: 24.66666%; padding: 0 5px; }
 
 .f1-step-icon {
 	display: inline-block; width: 40px; height: 40px; margin-top: 4px; background: #ddd;
@@ -103,7 +105,11 @@ img { max-width: 100%; }
 	width: 48px; height: 48px; margin-top: 0; background: #f35b3f; font-size: 22px; line-height: 48px;
 }
 
-.f1-step p { color: #ccc; }
+.f1-step p { 
+	color: #ccc;
+	line-height:20px; 
+
+}
 .f1-step.activated p { color: #f35b3f; }
 .f1-step.active p { color: #f35b3f; }
 
@@ -112,6 +118,11 @@ img { max-width: 100%; }
 .f1-buttons { text-align: right; }
 
 .f1 .input-error { border-color: #f35b3f; }
+
+.btn-default {
+	background-color:#38506A;
+	color:#fff;
+}
 
 
 
