@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 
 import dao.ConstrutoraDAO;
 import dominio.Construtora;
+import dominio.Endereco;
 import filtro.FiltroConstrutora;
 import util.JPAUtil;
 
@@ -56,116 +57,134 @@ public class PortalConstrutoraBean implements Serializable {
 	 */
 	public void preencher() {
 
-		// Residencial r1 = new Residencial();
-		// r1.setNome("Plaza Norte Residence");
-		// r1.setEndereco("MA 202 - Forquilha , Estrada de Ribamar,
-		// Maiobinha.");
-		// r1.setUrlImagem("imagens/scr01.jpg");
-		//
-		// Residencial r2 = new Residencial();
-		// r2.setNome("Alliance Residence");
+		Endereco e=new Endereco();
+		e.setRua("Rua Búzios, Lote no 12, Quadra 35 - Calhau, LItoral, Calhau");
+		
+		Construtora r1 = new Construtora();
+		 r1.setNomeFantasia("Plaza Norte Residence");
+		// r1.setEndereco("MA 202 - Forquilha , Estrada de Ribamar, Maiobinha.");
+		 r1.setUrlImagem("imagens/scr01.jpg");
+		 r1.setAnuncio("A partir de R$200.000");
+		 r1.setEndereco(e);
+		
+		 Construtora r2 = new Construtora();
+		 r2.setNomeFantasia("Alliance Residence");
 		// r2.setEndereco("Av. dos Holandeses, Litoral, Calhau");
-		// r2.setUrlImagem("imagens/scr02.jpg");
-		//
-		// Residencial r3 = new Residencial();
-		// r3.setNome("Jardins do Turu");
-		// r3.setEndereco("Avenida General Arthur Carvalho, s/n - Turu, Turu,
-		// Turu");
-		// r3.setUrlImagem("imagens/scr03.jpg");
-		//
-		// Residencial r4 = new Residencial();
-		// r4.setNome("Taroa Residence");
-		// r4.setEndereco("R. Santo Inácio de Loiola, LItoral, Olho D´água");
-		// r4.setUrlImagem("imagens/scr04.jpg");
-		//
-		// Residencial r5 = new Residencial();
-		// r5.setNome("Plaza das Flores Village");
-		// r5.setEndereco("Estrada da Guaíba , s/n, Iguaíba, Iguaíba");
-		// r5.setUrlImagem("imagens/scr05.jpg");
-		//
-		// Residencial r6 = new Residencial();
-		// r6.setNome("Village das Palmeiras Prime");
-		// r6.setEndereco("Rua Projetada, Cohama, Cohama");
-		// r6.setUrlImagem("imagens/scr06.jpg");
-		//
-		// Residencial r7 = new Residencial();
-		// r7.setNome("Aquamarine Residence");
-		// r7.setEndereco("Rua Cinco, Super Quadra D , Lote 02- Ponta D´Areia,
-		// Litoral, Ponta do Farol");
-		// r7.setUrlImagem("imagens/scr07.jpg");
-		//
-		// Residencial r8 = new Residencial();
-		// r8.setNome("Naturam Reserva Rangedor");
-		// r8.setEndereco("Rua Búzios, Lote no 12, Quadra 35 - Calhau, LItoral,
-		// Calhau");
-		// r8.setUrlImagem("imagens/scr08.jpg");
-		//
-		//
-		//
-		// Residencial r9 = new Residencial();
-		// r9.setNome("Plaza Norte Residence");
-		// r9.setEndereco("MA 202 - Forquilha , Estrada de Ribamar,
-		// Maiobinha.");
-		// r9.setUrlImagem("imagens/scr01.jpg");
-		//
-		// Residencial r10 = new Residencial();
-		// r10.setNome("Alliance Residence");
+		 r2.setUrlImagem("imagens/scr02.jpg");
+		 r2.setAnuncio("A partir de R$200.000");
+		 r2.setEndereco(e);
+		
+		 Construtora r3 = new Construtora();
+		 r3.setNomeFantasia("Jardins do Turu");
+//		 r3.setEndereco("Avenida General Arthur Carvalho, s/n - Turu, Turu, Turu");
+		 r3.setUrlImagem("imagens/scr03.jpg");
+		 r3.setAnuncio("A partir de R$200.000");
+		 r3.setEndereco(e);
+		
+		 Construtora r4 = new Construtora();
+		 r4.setNomeFantasia("Taroa Residence");
+	//	 r4.setEndereco("R. Santo Inácio de Loiola, LItoral, Olho D´água");
+		 r4.setUrlImagem("imagens/scr04.jpg");
+		 r4.setAnuncio("A partir de R$200.000");
+		 r4.setEndereco(e);
+		
+		 Construtora r5 = new Construtora();
+		 r5.setNomeFantasia("Plaza das Flores Village");
+	//	 r5.setEndereco("Estrada da Guaíba , s/n, Iguaíba, Iguaíba");
+		 r5.setUrlImagem("imagens/scr05.jpg");
+		 r5.setAnuncio("A partir de R$200.000");
+		 r5.setEndereco(e);
+		
+		 Construtora r6 = new Construtora();
+		 r6.setNomeFantasia("Village das Palmeiras Prime");
+	//	 r6.setEndereco("Rua Projetada, Cohama, Cohama");
+		 r6.setUrlImagem("imagens/scr06.jpg");
+		 r6.setAnuncio("A partir de R$200.000");
+		 r6.setEndereco(e);
+		
+		 Construtora r7 = new Construtora();
+		 r7.setNomeFantasia("Aquamarine Residence");
+		// r7.setEndereco("Rua Cinco, Super Quadra D , Lote 02- Ponta D´Areia,	 Litoral, Ponta do Farol");
+		 r7.setUrlImagem("imagens/scr07.jpg");
+		 r7.setAnuncio("A partir de R$200.000");
+		 r7.setEndereco(e);
+		
+		 Construtora r8 = new Construtora();
+		 r8.setNomeFantasia("Naturam Reserva Rangedor");
+		// r8.setEndereco("Rua Búzios, Lote no 12, Quadra 35 - Calhau, LItoral,	 Calhau");
+		 r8.setUrlImagem("imagens/scr08.jpg");
+		 r8.setAnuncio("A partir de R$200.000");
+		 r8.setEndereco(e);
+		
+		
+		
+		 Construtora r9 = new Construtora();
+		 r9.setNomeFantasia("Plaza Norte Residence");
+		// r9.setEndereco("MA 202 - Forquilha , Estrada de Ribamar, Maiobinha.");
+		 r9.setUrlImagem("imagens/scr09.jpg");
+		 r9.setAnuncio("A partir de R$200.000");
+		 r9.setEndereco(e);
+		
+		 Construtora r10 = new Construtora();
+		 r10.setNomeFantasia("Alliance Residence");
 		// r10.setEndereco("Av. dos Holandeses, Litoral, Calhau");
-		// r10.setUrlImagem("imagens/scr02.jpg");
-		//
-		// Residencial r11 = new Residencial();
-		// r11.setNome("Jardins do Turu");
-		// r11.setEndereco("Avenida General Arthur Carvalho, s/n - Turu, Turu,
-		// Turu");
-		// r11.setUrlImagem("imagens/scr03.jpg");
-		//
-		// Residencial r12 = new Residencial();
-		// r12.setNome("Taroa Residence");
+		 r10.setUrlImagem("imagens/scr10.jpg");
+		 r10.setAnuncio("A partir de R$200.000");
+		 r10.setEndereco(e);
+		
+		 Construtora r11 = new Construtora();
+		 r11.setNomeFantasia("Jardins do Turu");
+		// r11.setEndereco("Avenida General Arthur Carvalho, s/n - Turu, Turu,Turu");
+		 r11.setUrlImagem("imagens/scr11.jpg");
+		 r11.setAnuncio("A partir de R$200.000");
+		 r11.setEndereco(e);
+		
+		 Construtora r12 = new Construtora();
+		 r12.setNomeFantasia("Taroa Residence");
 		// r12.setEndereco("R. Santo Inácio de Loiola, LItoral, Olho D´água");
-		// r12.setUrlImagem("imagens/scr04.jpg");
-		//
-		// Residencial r13 = new Residencial();
-		// r13.setNome("Plaza das Flores Village");
+		 r12.setUrlImagem("imagens/scr12.jpg");
+		 r12.setAnuncio("A partir de R$200.000");
+		 r12.setEndereco(e);
+		
+		 Construtora r13 = new Construtora();
+		 r13.setNomeFantasia("Plaza das Flores Village");
 		// r13.setEndereco("Estrada da Guaíba , s/n, Iguaíba, Iguaíba");
-		// r13.setUrlImagem("imagens/scr05.jpg");
-		//
-		// Residencial r14 = new Residencial();
-		// r14.setNome("Village das Palmeiras Prime");
+		 r13.setUrlImagem("imagens/scr13.jpg");
+		 r13.setAnuncio("A partir de R$200.000");
+		 r13.setEndereco(e);
+		
+		 Construtora r14 = new Construtora();
+		 r14.setNomeFantasia("Village das Palmeiras Prime");
 		// r14.setEndereco("Rua Projetada, Cohama, Cohama");
-		// r14.setUrlImagem("imagens/scr06.jpg");
-		//
-		// Residencial r15 = new Residencial();
-		// r15.setNome("Aquamarine Residence");
-		// r15.setEndereco("Rua Cinco, Super Quadra D , Lote 02- Ponta D´Areia,
-		// Litoral, Ponta do Farol");
-		// r15.setUrlImagem("imagens/scr07.jpg");
-		//
-		// Residencial r16 = new Residencial();
-		// r16.setNome("Naturam Reserva Rangedor");
-		// r16.setEndereco("Rua Búzios, Lote no 12, Quadra 35 - Calhau, LItoral,
-		// Calhau");
-		// r16.setUrlImagem("imagens/scr08.jpg");
-		//
-		// residenciais.add(r1);
-		// residenciais.add(r2);
-		// residenciais.add(r3);
-		// residenciais.add(r4);
-		//
-		// residenciais.add(r5);
-		// residenciais.add(r6);
-		// residenciais.add(r7);
-		// residenciais.add(r8);
-		//
-		// residenciais.add(r9);
-		// residenciais.add(r10);
-		// residenciais.add(r11);
-		// residenciais.add(r12);
-		//
-		// residenciais.add(r13);
-		// residenciais.add(r14);
-		// residenciais.add(r15);
-		// residenciais.add(r16);;
-
+		 r14.setUrlImagem("imagens/scr14.jpg");
+		 r14.setAnuncio("A partir de R$200.000");
+		 r14.setEndereco(e);
+		
+		 Construtora r15 = new Construtora();
+		 r15.setNomeFantasia("Aquamarine Residence");
+	//	 r15.setEndereco("Rua Cinco, Super Quadra D , Lote 02- Ponta D´Areia, Litoral, Ponta do Farol");
+		 r15.setUrlImagem("imagens/scr15.jpg");
+		 r15.setAnuncio("A partir de R$200.000");
+		 r15.setEndereco(e);
+		
+		 Construtora r16 = new Construtora();
+		 r16.setNomeFantasia("Naturam Reserva Rangedor");
+		 //r16.setEndereco("Rua Búzios, Lote no 12, Quadra 35 - Calhau, LItoral, Calhau");
+		 r16.setUrlImagem("imagens/scr16.jpg");
+		 r16.setAnuncio("A partir de R$200.000");
+		 r16.setEndereco(e);
+		
+		 construtoras.add(r1);
+		 construtoras.add(r2);
+		 construtoras.add(r3);
+		 construtoras.add(r4);
+		
+		 construtoras.add(r5);
+		 construtoras.add(r6);
+		 construtoras.add(r7);
+		 construtoras.add(r8);
+		
+		
 		/**
 		 * Sempre devem ser duas listas
 		 */
@@ -173,8 +192,19 @@ public class PortalConstrutoraBean implements Serializable {
 		// DE 8 EM 8 - TOTAL 16 ITENS
 		// amostras.clear();
 
-		construtoras.addAll(construtoraDAO.listarConstrutoras(filtroConstrutora));
-	
+//		construtoras.addAll(construtoraDAO.listarConstrutoras(filtroConstrutora));
+		
+		 construtoras.add(r9);
+		 construtoras.add(r10);
+		 construtoras.add(r11);
+		 construtoras.add(r12);
+		
+		 construtoras.add(r13);
+		 construtoras.add(r14);
+		 construtoras.add(r15);
+		 construtoras.add(r16);;
+
+		
 		// String urlImagem = null;
 		// byte[] imgBytes = null;
 		//
