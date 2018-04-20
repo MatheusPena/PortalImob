@@ -73,6 +73,9 @@ public class ConstrutoraBean implements Serializable {
 				filtroConstrutora.setAscendente(SortOrder.ASCENDING.equals(sortOrder));
 				filtroConstrutora.setPropriedadeOrdenacao(sortField);
 				quantidadeConstrutoras = construtoraDAO.quantidadeFiltrados(filtroConstrutora);
+				
+				System.out.println("q "+quantidadeConstrutoras);
+				
 				setRowCount(quantidadeConstrutoras);
 				return construtoraDAO.listarConstrutoras(filtroConstrutora);
 			}
