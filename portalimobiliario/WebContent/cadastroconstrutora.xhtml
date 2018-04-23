@@ -5,194 +5,337 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
-	
-    <head>
 
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="js/cadastroimovel.js" type="text/javascript"></script>
-		<script src="js/cadastroimovel.js" type="text/javascript" charset="utf-8"></script>
-        
-        <title>Marketplace Lam</title>
+	<h:head>
+		<title>Marketplace LAM</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords"
+			content="Sign up and Subscribe Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+		<link rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min-.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  	<link rel="stylesheet" href="css/cadastroconstrutora.css" type='text/css' />
+		<link rel="stylesheet" href="css/cadastro-font.css"  />
+		<link
+			href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700&amp;subset=devanagari,latin-ext"
+			rel="stylesheet" />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500"/>
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css"/>
-		<link rel="stylesheet" href="assets/css/form-elements.css"/>
-        <link rel="stylesheet" href="css/cadastroconstrutora.css"/>
-        <link rel="shortcut icon" href="assets/ico/favicon.png"/>
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
-        
+		<style>
+.upImagem {
+	position: absolute !important;
+	top: -9999px !important;
+	left: -9999px !important;
+}
 
-    </head>
+.upImagem>.ui-fileupload-content {
+	display: none !important;
+	visibility: hidden !important;
+}
 
+.upImagem>.ui-fileupload-buttonbar {
+	background: none !important;
+	border: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	visibility: hidden !important;
+}
 
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-            data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#" style="color:white">Facilit IMOB</a>
-          </div>
-        <div class="collapse navbar-collapse " id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li><a href="index.xhtml">Início</a></li>
-            <li class="active"><a href="cadastro.xhtml"><span class="glyphicon glyphicon-user"></span> Login/Cadastre-se</a></li>
-            <li><a href="#">Fale Conosco</a></li>
-          </ul>
-        </div>
-        </div>
-      </nav>
+.painelFoto, .canvasImagem {
+	min-width: 100px !important;
+	min-height: 100px !important;
+	-moz-border-radius: 4px!mportant;
+	-webkit-border-radius: 4px!mportant;
+	border-radius: 4px!mportant;
+}
+</style>
 
-        <!-- Top content -->
-        <div class="top-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
-                    	<form role="form" action="" method="post" class="f1">
+	</h:head>
 
-                    		<h3>Cadastrar Construtora</h3>
-                    		<div class="f1-steps">
-                    			<div class="f1-progress">
-                    			    <div class="f1-progress-line" data-now-value="13.66" data-number-of-steps="4" style="width: 13.66%;"></div>
-                    			</div>
-                    			<div class="f1-step active">
-                            <div class="f1-step-icon"><i class="fa fa-key"></i></div>
-                    				<p>Dados da construtora</p>
-                    			</div>
-                    			<div class="f1-step">
-                            <div class="f1-step-icon"><span class="glyphicon glyphicon-home"></span></div>
-                    				<p>Endereço</p>
-                    			</div>
-                    			<div class="f1-step">
-                            <div class="f1-step-icon"><span class="glyphicon glyphicon-home"></span></div>
-                    				<p>Contato</p>
-                    			</div>
-                    		    <div class="f1-step">
-                    		<div class="f1-step-icon"><span class="glyphicon glyphicon-camera"></span></div>
-                    				<p>Imagem</p>
-                    			</div>
-                    		</div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" style="color: white">Facilit
+					IMOB</a>
+			</div>
+			<div class="collapse navbar-collapse " id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index.xhtml">Início</a></li>
+					<li class="active"><a href="cadastro.xhtml"><span
+							class="glyphicon glyphicon-user"></span> Login/Cadastre-se</a></li>
 
-                    		<fieldset>
-                    			<h4>Insira os dados da construtora:</h4>
-                    			<div class="form-group">
-                    			    <label class="sr-only" for="f1-first-name">CNPJ</label>
-                                    <input type="text" name="f1-first-name" placeholder="CNPJ" class="f1-first-name form-control" id="f1-first-name"/>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-last-name">Nome Fantasia</label>
-     									 <textarea style="width:100%;" placeholder="Nome Fantasia"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-last-name">Anuncio</label>
-                                    <input type="text" name="f1-last-name" placeholder="Anúncio" class="f1-last-name form-control" id="f1-last-name"/>
-                                </div>
-                                <div class="form-group">
-                                <select name="atividade" style="width:50%">
-								  <option value="Ativo">Ativo</option>
-								  <option value="Inativo">Inativo</option>
-								</select>
-								</div>
-                                <div class="f1-buttons">
-                                    <button type="button" class="btn btn-next">Próximo</button>
-                                </div>
-                            </fieldset>
+					<li><a href="#">Fale Conosco</a></li>
+				</ul>
 
-                            <fieldset>
-                            	<h4>Insira o endereço da construtora:</h4>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-first-name">estado</label>
-                                    <input type="text" name="f1-first-name" placeholder="Estado" class="f1-first-name form-control" id="f1-first-name"/>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-password">cidade</label>
-                                    <input type="text" name="f1-telefone" placeholder="Cidade" class="f1-telefone form-control" id="f1-telefone"/>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-password">bairro</label>
-                                    <input type="text" name="f1-telefone" placeholder="Bairro" class="f1-telefone form-control" id="f1-telefone"/>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-password">rua</label>
-                                    <input type="text" name="f1-telefone" placeholder="Rua" class="f1-telefone form-control" id="f1-telefone"/>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-password">cep</label>
-                                    <input type="text" name="f1-telefone" placeholder="CEP" class="f1-telefone form-control" id="f1-telefone"/>
-                                </div>
-                                <div class="f1-buttons">
-                                    <button type="button" class="btn btn-previous">Anterior</button>
-                                    <button type="button" class="btn btn-next">Próximo</button>
-                                </div>
-                             </fieldset>
-                             <fieldset>
-                            	<h4>Insira o contato da construtora:</h4>
-                      			<div class="form-group">
-                                    <label class="sr-only" for="f1-first-name">Celular</label>
-                                    <input type="text" name="f1-first-name" placeholder="Celular" class="f1-first-name form-control" id="f1-first-name"/>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-password">Telefone</label>
-                                    <input type="text" name="f1-telefone" placeholder="Telefone" class="f1-telefone form-control" id="f1-telefone"/>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-password">E-mail</label>
-                                    <input type="text" name="f1-telefone" placeholder="E-mail" class="f1-telefone form-control" id="f1-telefone"/>
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-password">Outro E-mail</label>
-                                    <input type="text" name="f1-telefone" placeholder="Outro E-mail" class="f1-telefone form-control" id="f1-telefone"/>
-                                </div>										
-							<div class="f1-buttons">
-                                    <button type="button" class="btn btn-previous">Anterior</button>
-                                    <button type="button" class="btn btn-next">Próximo</button>
-                            </div>
-                            </fieldset>
-                            <fieldset>
-                                <h4>Envie as imagens da construtora:</h4>
-                                 <div>
-								  	  <input type="file" name="image"/>
-								  	  <input type="file" name="image"/>
-								  	  <input type="file" name="image"/>
-								  	  <input type="file" name="image"/>
-								 </div>
-                                <div class="f1-buttons">
-                                    <button type="button" class="btn btn-previous">Anterior</button>
-                                    <button type="submit" class="btn btn-submit">Finalizar</button>
-                                </div>
-                            </fieldset>
+			</div>
+		</div>
+	</nav>
 
-                    	</form>
-                    </div>
-                </div>
+	<div class="container">
+		<!-- <form id="contact" action="" method="post"> -->
 
-            </div>
-        </div>
+		<h:form>
+		
+		<p:messages styleClass="msgForm" />
+
+			<div id="contact">
+
+				<h3>Cadastrar Construtora</h3>
+				<h4>Dados da construtora</h4>
+
+				<fieldset>
+					<!-- 	<input placeholder="Nome do imóvel" type="text" tabindex="1"
+					required="required" autofocus="autofocus" /> -->
+
+					<p:inputMask value="#{construtoraBean.construtora.numeroPessoa}"
+						mask="99.999.999/9999-99" tabindex="1" placeholder="CNPJ"
+						styleClass="txtCNPJ" />
+				</fieldset>
+
+				<fieldset>
+					<p:inputText value="#{construtoraBean.construtora.nomeFantasia}"
+						tabindex="1" placeholder="Nome fantasia" maxlength="100"
+						styleClass="txtNomeFantasia" />
+				</fieldset>
+
+				<fieldset>
+					<p:inputText value="#{construtoraBean.construtora.anuncio}"
+						tabindex="1" placeholder="Anúncio" maxlength="50"
+						styleClass="txtAnuncio" />
+				</fieldset>
+
+				<fieldset>
+					<h:selectOneMenu
+						value="#{construtoraBean.construtora.statusConstrutora}"
+						styleClass="form-control cmbStatusConstrutora"
+						converter="omnifaces.SelectItemsConverter">
+						<f:selectItems var="s"
+							value="#{statusConstrutoraBean.statusConstrutoras}"
+							itemLabel="#{s}" itemValue="#{s}" />
+					</h:selectOneMenu>
+				</fieldset>
+
+				<!-- 
+				<fieldset>
+					<p:inputNumber value="#{construtoraBean.construtora.valor}"
+						decimalSeparator="," thousandSeparator="."
+						style="width: 100% !important">
+					</p:inputNumber>
+				</fieldset> -->
+
+				<h4>Endereço da construtora</h4>
+				<fieldset>
+					<h:selectOneMenu value="#{construtoraBean.endereco.uf}"
+						styleClass="form-control cmbEstado">
+						<f:selectItems var="uf" value="#{cadastroUsuarioBean.estados()}"
+							itemLabel="#{uf}" itemValue="#{uf}" />
+					</h:selectOneMenu>
+				</fieldset>
+
+				<fieldset>
+					<p:inputText placeholder="Cidade" styleClass="txtCidade"
+						value="#{construtoraBean.endereco.cidade}" />
+				</fieldset>
+
+				<fieldset>
+					<p:inputText placeholder="Bairro" styleClass="txtBairro"
+						value="#{construtoraBean.endereco.bairro}" />
+				</fieldset>
+
+				<fieldset>
+					<p:inputText placeholder="Rua" styleClass="txtRua"
+						value="#{construtoraBean.endereco.rua}" />
+				</fieldset>
 
 
-        <!-- Javascript -->
-        <script src="assets/js/jquery-1.11.1.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/retina-1.1.0.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
+				<fieldset>
+					<p:inputMask value="#{construtoraBean.endereco.cep}"
+						styleClass="txtCep" placeholder="CEP" mask="99999-999" />
+				</fieldset>
 
-        <!--[if lt IE 10]>
-            <script src="assets/js/placeholder.js"></script>
-        <![endif]-->
 
+				<h4>Contato da construtora</h4>
+				<fieldset>
+					<p:inputText placeholder="Celular" styleClass="txtCelular"
+						value="#{construtoraBean.contato.telCelular}" />
+				</fieldset>
+
+
+				<fieldset>
+					<p:inputText placeholder="Outro telefone"
+						styleClass="txtOutroTelefone"
+						value="#{construtoraBean.contato.telOutro}" />
+				</fieldset>
+
+				<fieldset>
+					<p:inputText placeholder="E-mail" styleClass="txtEmail"
+						value="#{construtoraBean.contato.email}" />
+				</fieldset>
+
+				<fieldset>
+					<p:inputText placeholder="Outro e-mail" styleClass="txtOutroEmail"
+						value="#{construtoraBean.contato.outroEmail}" />
+				</fieldset>
+
+
+				<h4>Imagem da construtora</h4>
+
+				<!--<div>
+					<input type="file" name="image" /> <input type="file" name="image" />
+					<input type="file" name="image" /> <input type="file" name="image" />
+				</div> -->
+
+<!-- <p:messages id="msg" /> -->
+				
+
+				<div>
+
+					<div class="row">
+						<div class="col-md-4">
+							<p:commandButton icon="fa fa-plus" styleClass="form-control"
+								update="@(.txtCNPJ) @(.btnExcluirImagem)" process="@(.txtCNPJ)"
+								onclick="clicar()">
+							</p:commandButton>
+						</div>
+
+						<div class="col-md-4">
+
+							<p:commandButton icon="fa fa-trash"
+								onclick="$('.btnAbriDialogo').click()"
+								update="@(.displayExcluirImagem)" process="@this"
+								styleClass="btnExcluirImagem form-control">
+
+								<f:setPropertyActionListener
+									value="#{construtoraBean.construtora.urlImagem}"
+									target="#{construtoraBean.urlImagem}" />
+
+							</p:commandButton>
+
+							<!-- botão bootstrap auxiliar, fica invisível e é chamado via javascript -->
+							<button style="display: none;" type="button"
+								class="btn btn-primary btnAbriDialogo form-control"
+								data-toggle="modal" data-target="#dialogoExluirImagem" />
+
+						</div>
+
+						<div class="col-md-4">
+							<p:graphicImage width="80" height="80" alt="Imagem"
+								title="Imagem construtora" value="#{imagemBean.imagem}"
+								style="vertical-align: center !important; line-height: 100px; border: 1px solid grey"
+								styleClass="canvasImagem ui-widget ui-widget-content ui-corner-all"
+								id="imagem" cache="false" />
+
+
+							<p:fileUpload styleClass="upImagem" widgetVar="up"
+								fileUploadListener="#{construtoraBean.carregarImagem}"
+								mode="advanced" dragDropSupport="false" skinSimple="true"
+								sizeLimit="5228800000"
+								allowTypes="/(\.|\/)(gif|jpe?g|png|JPG|PNG|GIF)$/"
+								invalidFileMessage="Arquivo não permitido"
+								invalidSizeMessage="Tamanho do arquivo inválido"
+								label="Carregar arquivos" showButtons="false"
+								fileLimitMessage="Número máximo de arquivos excedidos"
+								auto="true" update="imagem @(.btnExcluirImagem)" />
+
+							<script>
+								function clicar() {
+									//Evento para clicar no fileupload
+									$('.upImagem input[type=file]').click();
+								}
+							</script>
+						</div>
+					</div>
+				</div>
+
+				<br></br>
+
+				<fieldset>
+
+					<!-- <button name="submit" type="submit" id="contact-submit"
+						data-submit="...Sending">Enviar</button> -->
+					<!-- <button type="submit" id="contact-submit" onclick="salvar()">Finalizar</button>
+					<p:remoteCommand name="salvar" action="#{construtoraBean.salvar()}"
+						update="msg" /> -->
+
+					<p:commandButton value="Salvar" update="@(.msgForm)"
+						action="#{construtoraBean.salvar()}" />
+
+					<p:commandButton value="Novo" update="@form"
+						action="#{construtoraBean.novo()}" />
+
+					<!-- 
+					<button type="button" id="contact-submit" onclick="cadastroconstrutora.xhtml">Novo</button>
+					<p:remoteCommand name="novo"  action="#{construtoraBean.novo()}"
+						update="@form" oncomplete="cadastroconstrutora.xhtml" /> -->
+
+				</fieldset>
+
+
+				<fieldset>
+
+					<p:dataTable lazy="true" paginator="true" rows="5"
+						styleClass="table" value="#{construtoraBean.dataModelConstrutora}"
+						var="c" emptyMessage="Sem registros">
+
+						<p:column headerText="Nome">
+							<h:outputText value="#{c.nomeFantasia}" />
+						</p:column>
+
+						<p:column headerText="Editar">
+							<p:commandButton icon="fa fa-edit" styleClass="btn btn-secondary"
+								process="@form"
+								action="#{construtoraBean.preencherAtualizacao(c)}"
+								update="@(.txtCNPJ) @(.txtNomeFantasia) @(.txtAnuncio) @(.cmbStatusConstrutora) @(.cmbEstado) @(.txtCidade) @(.txtBairro) @(.cmbEstado) @(.txtRua) @form">
+
+								<f:setPropertyActionListener value="#{c.endereco}"
+									target="#{construtoraBean.endereco}" />
+
+							</p:commandButton>
+						</p:column>
+					</p:dataTable>
+				</fieldset>
+			</div>
+		</h:form>
+
+		<div class="modal fade" id="dialogoExluirImagem" tabindex="-1"
+			role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog dialogoExluirImagem" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Excluir</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Excluir imagem.</p>
+					</div>
+					<div class="modal-footer">
+
+						<p:commandButton action="#{construtoraBean.excluirImagem()}"
+							onclick="$('.btnFecharModal').click();"
+							styleClass="btn btn-primary" value="Sim"
+							update="@(.canvasImagem) @(.btnExcluirImagem)" process="@this" />
+
+						<p:commandButton value="Não" styleClass="btn btn-secondary"
+							onclick="$('.btnFecharModal').click();" type="button" />
+
+						<button type="button" style="display: none;"
+							class="btn btn-secondary btnFecharModal" data-dismiss="modal" />
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </f:view>

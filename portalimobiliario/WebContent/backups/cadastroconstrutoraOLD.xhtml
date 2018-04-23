@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+	
+    <head>
+
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="js/cadastroimovel.js" type="text/javascript"></script>
+		<script src="js/cadastroimovel.js" type="text/javascript" charset="utf-8"></script>
+        
+        <title>Marketplace Lam</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500"/>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="assets/css/form-elements.css"/>
+        <link rel="stylesheet" href="css/cadastroconstrutora.css"/>
+        <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+        
+
+    </head>
+
+
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="color:white">Facilit IMOB</a>
+          </div>
+        <div class="collapse navbar-collapse " id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="index.xhtml">Início</a></li>
+            <li class="active"><a href="cadastro.xhtml"><span class="glyphicon glyphicon-user"></span> Login/Cadastre-se</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+
+        <!-- Top content -->
+        <div class="top-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+                    	<form role="form" action="" method="post" class="f1">
+
+                    		<h3>Cadastrar Construtora</h3>
+                    		<div class="f1-steps">
+                    			<div class="f1-progress">
+                    			    <div class="f1-progress-line" data-now-value="13.66" data-number-of-steps="4" style="width: 13.66%;"></div>
+                    			</div>
+                    			<div class="f1-step active">
+                            <div class="f1-step-icon"><i class="fa fa-key"></i></div>
+                    				<p>Dados da construtora</p>
+                    			</div>
+                    			<div class="f1-step">
+                            <div class="f1-step-icon"><span class="glyphicon glyphicon-home"></span></div>
+                    				<p>Endereço</p>
+                    			</div>
+                    			<div class="f1-step">
+                            <div class="f1-step-icon"><span class="glyphicon glyphicon-home"></span></div>
+                    				<p>Contato</p>
+                    			</div>
+                    		    <div class="f1-step">
+                    		<div class="f1-step-icon"><span class="glyphicon glyphicon-camera"></span></div>
+                    				<p>Imagem</p>
+                    			</div>
+                    		</div>
+
+                    		<fieldset>
+                    			<h4>Insira os dados da construtora:</h4>
+                    			<div class="form-group">
+                    			    <label class="sr-only" for="f1-first-name">CNPJ</label>
+                                    <input type="text" name="f1-first-name" placeholder="CNPJ" class="f1-first-name form-control" id="f1-first-name"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-last-name">Nome Fantasia</label>
+     									 <textarea style="width:100%;" placeholder="Nome Fantasia"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-last-name">Anuncio</label>
+                                    <input type="text" name="f1-last-name" placeholder="Anúncio" class="f1-last-name form-control" id="f1-last-name"/>
+                                </div>
+                                <div class="form-group">
+                                <select name="atividade" style="width:50%">
+								  <option value="Ativo">Ativo</option>
+								  <option value="Inativo">Inativo</option>
+								</select>
+								</div>
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-next">Próximo</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                            	<h4>Insira o endereço da construtora:</h4>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-first-name">estado</label>
+                                    <input type="text" name="f1-first-name" placeholder="Estado" class="f1-first-name form-control" id="f1-first-name"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-password">cidade</label>
+                                    <input type="text" name="f1-telefone" placeholder="Cidade" class="f1-telefone form-control" id="f1-telefone"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-password">bairro</label>
+                                    <input type="text" name="f1-telefone" placeholder="Bairro" class="f1-telefone form-control" id="f1-telefone"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-password">rua</label>
+                                    <input type="text" name="f1-telefone" placeholder="Rua" class="f1-telefone form-control" id="f1-telefone"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-password">cep</label>
+                                    <input type="text" name="f1-telefone" placeholder="CEP" class="f1-telefone form-control" id="f1-telefone"/>
+                                </div>
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Anterior</button>
+                                    <button type="button" class="btn btn-next">Próximo</button>
+                                </div>
+                             </fieldset>
+                             <fieldset>
+                            	<h4>Insira o contato da construtora:</h4>
+                      			<div class="form-group">
+                                    <label class="sr-only" for="f1-first-name">Celular</label>
+                                    <input type="text" name="f1-first-name" placeholder="Celular" class="f1-first-name form-control" id="f1-first-name"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-password">Telefone</label>
+                                    <input type="text" name="f1-telefone" placeholder="Telefone" class="f1-telefone form-control" id="f1-telefone"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-password">E-mail</label>
+                                    <input type="text" name="f1-telefone" placeholder="E-mail" class="f1-telefone form-control" id="f1-telefone"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-password">Outro E-mail</label>
+                                    <input type="text" name="f1-telefone" placeholder="Outro E-mail" class="f1-telefone form-control" id="f1-telefone"/>
+                                </div>										
+							<div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Anterior</button>
+                                    <button type="button" class="btn btn-next">Próximo</button>
+                            </div>
+                            </fieldset>
+                            <fieldset>
+                                <h4>Envie as imagens da construtora:</h4>
+                                 <div>
+								  	  <input type="file" name="image"/>
+								  	  <input type="file" name="image"/>
+								  	  <input type="file" name="image"/>
+								  	  <input type="file" name="image"/>
+								 </div>
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Anterior</button>
+                                    <button type="submit" class="btn btn-submit">Finalizar</button>
+                                </div>
+                            </fieldset>
+
+                    	</form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/retina-1.1.0.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+
+</f:view>

@@ -19,8 +19,8 @@
 			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min-.js"></script>
 		<script
 			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link href="css/cadastroimovel.css" rel='stylesheet' type='text/css' />
-		<link href="css/cadastro-font.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/cadastroconstrutora.css"/>
+		<link rel="stylesheet" href="css/cadastro-font.css"/>
 		<link
 			href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700&amp;subset=devanagari,latin-ext"
 			rel="stylesheet" />
@@ -60,12 +60,12 @@
 
 			<div id="contact">
 
-				<h3>Cadastrar Status Usuário</h3>
+				<h3>Cadastrar Status Construtora</h3>
 				<h4>Dados do status</h4>
 
 				<fieldset>
 					<p:inputText
-						value="#{statusUsuarioBean.statusUsuario.descricao}"
+						value="#{statusConstrutoraBean.statusConstrutora.descricao}"
 						tabindex="1" placeholder="Descrição status" maxlength="100" />
 				</fieldset>
 
@@ -73,7 +73,7 @@
 
 					<button type="submit" id="contact-submit" onclick="salvar()">Salvar</button>
 					<p:remoteCommand name="salvar"
-						action="#{statusUsuarioBean.salvar()}" update="msg" />
+						action="#{statusConstrutoraBean.salvar()}" update="msg" />
 
 				</fieldset>
 

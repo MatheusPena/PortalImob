@@ -1,59 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: #888;
-    line-height: 30px;
-    text-align: center;
-    background:url(../imagens/cadastrobg3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
-}
-
-strong { font-weight: 500; }
-
-a, a:hover, a:focus {
-	color: #f35b3f;
-	text-decoration: none;
-    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
-}
-
-h1, h2 {
-	margin-top: 10px;
-	font-size: 38px;
-    font-weight: 100;
-    color: #555;
-    line-height: 50px;
-}
-
-h3 {
-	font-size: 22px;
-    font-weight: 300;
-    color: #555;
-    line-height: 30px;
-}
-
-h4 {
-	font-size: 18px;
-    font-weight: 300;
-    color: #555;
-    line-height: 26px;
-}
-
-img { max-width: 100%; }
-
-::-moz-selection { background: #f35b3f; color: #fff; text-shadow: none; }
-::selection { background: #f35b3f; color: #fff; text-shadow: none; }
-
-
-/***** Top menu *****/
-.navbar, .navbar-inverse {
-	background-color: #38506A;
-	border-color:white;
-	border-radius: 0;
+.navbar, .navbar-inverse { 
+	background-color: #38506A !important;
+	border-color:white !important ;
+	border-radius: 0 !important;
 
 }
 
@@ -66,108 +16,215 @@ img { max-width: 100%; }
 	background-color:black;
 }
 
-
-/***** Top content *****/
-
-.top-content { padding: 40px 0 170px 0; }
-
-.top-content .text { color: #fff; }
-.top-content .text h1 { color: #fff; }
-.top-content .description { margin: 20px 0 10px 0; }
-.top-content .description p { opacity: 0.8; }
-.top-content .description a { color: #fff; }
-.top-content .description a:hover,
-.top-content .description a:focus { border-bottom: 1px dotted #fff; }
-
-.form-box { padding-top: 40px; }
-
-.f1 {
-	padding: 25px; background: #fff;
-	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-}
-.f1 h3 { margin-top: 0; margin-bottom: 5px; text-transform: uppercase; }
-
-.f1-steps { overflow: hidden; position: relative; margin-top: 20px; }
-
-.f1-progress { position: absolute; top: 24px; left: 0; width: 100%; height: 1px; background: #ddd; }
-.f1-progress-line { position: absolute; top: 0; left: 0; height: 1px; background: #f35b3f; }
-
-.f1-step { position: relative; float: left; width: 24.66666%; padding: 0 5px; }
-
-.f1-step-icon {
-	display: inline-block; width: 40px; height: 40px; margin-top: 4px; background: #ddd;
-	font-size: 20px; color: #fff; line-height: 40px; padding-right: 2px;
-	-moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
-}
-.f1-step.activated .f1-step-icon {
-	background: #fff; border: 1px solid #f35b3f; color: #f35b3f; line-height: 38px;
-}
-.f1-step.active .f1-step-icon {
-	width: 48px; height: 48px; margin-top: 0; background: #f35b3f; font-size: 22px; line-height: 48px;
+.main-container {
+	padding-top:50px;
 }
 
-.f1-step p { 
-	color: #ccc;
-	line-height:20px; 
+
+body {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Hind', sans-serif;
+    background: url(../imagens/cadastrobg.jpg) no-repeat 0px 0px;
+	background-size:cover;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	font-size: 12px;
+	line-height: 30px;
+	color: #777;
+}
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+ 
+h4 {
+	font-weight:bold !important;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact input[type="tel"],
+.contact input[type="url"],
+.contact input[type="file"],
+.contact textarea,
+.contact button[type="submit"] {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.contact {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact input[type="tel"],
+.contact input[type="url"],
+.contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+.contact input[type="text"]:hover,
+.contact input[type="email"]:hover,
+.contact input[type="tel"]:hover,
+.contact input[type="url"]:hover,
+.contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+.contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+.contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.contact input[type="file"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  color: #FFF;
+  margin: 0 0 0px;
+  padding-top:10px;
+  font-size: 15px;
+}
+
+.contact button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+.btn-primary {
+	width:35px !important;
+	height:25px !important;
+	text-align:center !important;
+	background-color: #38506A !important;
 
 }
-.f1-step.activated p { color: #f35b3f; }
-.f1-step.active p { color: #f35b3f; }
-
-.f1 fieldset { display: none; text-align: left; }
-
-.f1-buttons { text-align: right; }
-
-.f1 .input-error { border-color: #f35b3f; }
 
 .btn-default {
-	background-color:#38506A;
-	color:#fff;
+	width:35px !important;
+	height:25px !important;
+	text-align:center !important;
+	background-color: red !important;
 }
 
+.edit-deletar {
 
-
-/***** Media queries *****/
-
-@media (min-width: 992px) and (max-width: 1199px) {}
-
-@media (min-width: 768px) and (max-width: 991px) {}
-
-@media (max-width: 767px) {
-
-	.navbar { padding-top: 0; }
-	.navbar.navbar-no-bg { background: #333; background: rgba(51, 51, 51, 0.9); }
-	.navbar-brand { height: 60px; margin-left: 15px; }
-	.navbar-collapse { border: 0; }
-	.navbar-toggle { margin-top: 12px; }
-
-	.top-content { padding: 40px 0 110px 0; }
+	text-align:center !important;
+	width:20% !important;
+	border: 1px solid #d3d3d3 !important;
 
 }
+.edit-editar {
 
-@media (max-width: 415px) {
-
-	h1, h2 { font-size: 32px; }
-
-	.f1 { padding-bottom: 20px; }
-	.f1-buttons button { margin-bottom: 5px; }
+	text-align:center !important;
+	width:20% !important;
+	border: 1px solid #d3d3d3 !important;
+	
 
 }
+.edit-nome {
+
+	text-align:left !important;
+	border: 1px solid #d3d3d3 !important;
 
 
-/* Retina-ize images/icons */
+}
+.container-table {
+	border: 10px solid red !important;
+}
 
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) {
+.btn-pesquisa {
+	width:100% !important;
+	height: 30px !important;
+	
+}
+.btn-remove {
+	width:100% !important;
+	height: 30px !important;
+	background-color: red !important;	
+}
 
-	/* logo */
-    .navbar-brand {
-    	background-image: url(../img/logo@2x.png) !important; background-repeat: no-repeat !important; background-size: 162px 36px !important;
-    }
-
+.edit-search {
+	width:80% !important;
+	text-align:left !important;
 }
