@@ -25,9 +25,9 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    font-family: 'Hind', sans-serif;
     background: url(../imagens/cadastrobg.jpg) no-repeat 0px 0px;
 	background-size:cover;
+	font-family: 'Hind', sans-serif;
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	font-weight: 100;
 	font-size: 12px;
