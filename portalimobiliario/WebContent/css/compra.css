@@ -315,6 +315,10 @@ select:focus, select:active {
 	height: 40px;
 }
 
+.listing_detail {
+	padding-bottom:10px;
+	font-size: 15px;
+}
 
 /*********************************************************************************/
 /* Wrapper                                                                       */
@@ -349,7 +353,7 @@ select:focus, select:active {
 	{
 	}
 .imob-row {
-	padding:30px 20px 10px 20px;
+
 }
 
 .btn-light {
@@ -438,7 +442,7 @@ select:focus, select:active {
 		outline:0;
 		overflow: hidden;
 		background: #f3f3f3;
-		padding: 3px 0em 60px;
+		padding-bottom:150px;
 		text-align: center;
 	}
 

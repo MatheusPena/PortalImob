@@ -5,6 +5,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
 	<h:head>
 		<title>Marketplace LAM</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,67 +15,80 @@
 		<link rel="stylesheet"
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min-.js"></script>
 		<script
 			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link href="css/cadastroconstrutora.css" rel='stylesheet'
-			type='text/css' />
-		<link href="css/cadastro-font.css" rel="stylesheet" />
+	  	<link rel="stylesheet" href="css/cadastroconstrutora.css" type='text/css' />
+		<link rel="stylesheet" href="css/cadastro-font.css"  />
 		<link
 			href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700&amp;subset=devanagari,latin-ext"
 			rel="stylesheet" />
-		<link
-			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-			rel="stylesheet" id="bootstrap-css" />
-		<script
-			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="js/cadastroimovelOLD.js"></script>
-		<link href="css/jsf.css" rel='stylesheet' type='text/css' />
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-		
-		
+
+		<style>
+.upImagem {
+	position: absolute !important;
+	top: -9999px !important;
+	left: -9999px !important;
+}
+
+.upImagem>.ui-fileupload-content {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.upImagem>.ui-fileupload-buttonbar {
+	background: none !important;
+	border: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	visibility: hidden !important;
+}
+
+.painelFoto, .canvasImagem {
+	min-width: 100px !important;
+	min-height: 100px !important;
+	-moz-border-radius: 4px!mportant;
+	-webkit-border-radius: 4px!mportant;
+	border-radius: 4px!mportant;
+}
+</style>
+
 	</h:head>
 
-
 	<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse"
-      data-target="#myNavbar">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#" style="color:white">Facilit IMOB</a>
-    </div>
-  <div class="collapse navbar-collapse " id="myNavbar">
-    <ul class="nav navbar-nav">
-      <li><a  style="color:white"  href="index.html">Início</a></li>
-      <li class="active"><a href="cadastro.html"><span class="glyphicon glyphicon-user"></span> Login/Cadastre-se</a></li>
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" style="color: white">Facilit
+					IMOB</a>
+			</div>
+			<div class="collapse navbar-collapse " id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index.xhtml">Início</a></li>
+					<li class="active"><a href="cadastro.xhtml"><span
+							class="glyphicon glyphicon-user"></span> Login/Cadastre-se</a></li>
 
-      <li><a style="color:white" href="#">Fale Conosco</a></li>
-    </ul>
-  </div>
-  </div>
-</nav>
+					<li><a href="#">Fale Conosco</a></li>
+				</ul>
 
-	
-		<div class="container-fluid">	
-			<div class="row">
-			<div class="col-sm-1"></div>
-			<div class="col-sm-10 contact">
-			<h:form>
-				<div class="col-sm-6">
-					<div class="container-fluid">
+			</div>
+		</div>
+	</nav>
 
+	<div class="container">
+		<!-- <form id="contact" action="" method="post"> -->
 
-						<p:messages styleClass="msgForm" />
+		<h:form>
+		
+		<p:messages styleClass="msgForm" />
 
-			<div  class="container-fluid"  id="contact">
+			<div id="contact">
 
-				<h3 class="text-center">Cadastrar Construtora</h3>
+				<h3>Cadastrar Construtora</h3>
 				<h4>Dados da construtora</h4>
 
 				<fieldset>
@@ -116,7 +130,7 @@
 						style="width: 100% !important">
 					</p:inputNumber>
 				</fieldset> -->
-				<br/>
+
 				<h4>Endereço da construtora</h4>
 				<fieldset>
 					<h:selectOneMenu value="#{construtoraBean.endereco.uf}"
@@ -147,7 +161,7 @@
 						styleClass="txtCep" placeholder="CEP" mask="99999-999" />
 				</fieldset>
 
-				<br/>
+
 				<h4>Contato da construtora</h4>
 				<fieldset>
 					<p:inputText placeholder="Celular" styleClass="txtCelular"
@@ -170,10 +184,10 @@
 					<p:inputText placeholder="Outro e-mail" styleClass="txtOutroEmail"
 						value="#{construtoraBean.contato.outroEmail}" />
 				</fieldset>
-				
-				<br></br>
+
+
 				<h4>Imagem da construtora</h4>
-				
+
 				<!--<div>
 					<input type="file" name="image" /> <input type="file" name="image" />
 					<input type="file" name="image" /> <input type="file" name="image" />
@@ -182,15 +196,18 @@
 <!-- <p:messages id="msg" /> -->
 				
 
-				<div  class="container-fluid" >
+				<div>
 
 					<div class="row">
-						<div class="col-md-6">
-							<p:commandButton icon="fa fa-plus" styleClass="form-control btn-plus"
+						<div class="col-md-4">
+							<p:commandButton icon="fa fa-plus" styleClass="form-control"
 								update="@(.txtCNPJ) @(.btnExcluirImagem)" process="@(.txtCNPJ)"
 								onclick="clicar()">
 							</p:commandButton>
-						
+						</div>
+
+						<div class="col-md-4">
+
 							<p:commandButton icon="fa fa-trash"
 								onclick="$('.btnAbriDialogo').click()"
 								update="@(.displayExcluirImagem)" process="@this"
@@ -200,21 +217,19 @@
 									value="#{construtoraBean.construtora.urlImagem}"
 									target="#{construtoraBean.urlImagem}" />
 
-									<!-- botão bootstrap auxiliar, fica invisível e é chamado via javascript -->
+							</p:commandButton>
+
+							<!-- botão bootstrap auxiliar, fica invisível e é chamado via javascript -->
 							<button style="display: none;" type="button"
 								class="btn btn-primary btnAbriDialogo form-control"
 								data-toggle="modal" data-target="#dialogoExluirImagem" />
-							
-							
-							</p:commandButton>
-						
-						
+
 						</div>
 
-						<div class="col-md-6 text-center">
-
-							<p:graphicImage  alt="Imagem"
+						<div class="col-md-4">
+							<p:graphicImage width="80" height="80" alt="Imagem"
 								title="Imagem construtora" value="#{imagemBean.imagem}"
+								style="vertical-align: center !important; line-height: 100px; border: 1px solid grey"
 								styleClass="canvasImagem ui-widget ui-widget-content ui-corner-all"
 								id="imagem" cache="false" />
 
@@ -229,40 +244,20 @@
 								label="Carregar arquivos" showButtons="false"
 								fileLimitMessage="Número máximo de arquivos excedidos"
 								auto="true" update="imagem @(.btnExcluirImagem)" />
-							
+
 							<script>
 								function clicar() {
 									//Evento para clicar no fileupload
 									$('.upImagem input[type=file]').click();
 								}
 							</script>
-						
 						</div>
-
-						
 					</div>
 				</div>
-				
-				
-				</div>
-
-
-						<fieldset>
-							<button name="submit" type="submit" id="contact-submit"
-								data-submit="...Sending">Enviar</button>
-						</fieldset>
-
-					</div>
-				</div>
-
-
-				<div class="col-sm-6 container-fluid">
-	
-				<h3 class="text-center">Tabela Construtora</h3>
 
 				<br></br>
-					<div class="text-center">
-					<fieldset>
+
+				<fieldset>
 
 					<!-- <button name="submit" type="submit" id="contact-submit"
 						data-submit="...Sending">Enviar</button> -->
@@ -270,12 +265,11 @@
 					<p:remoteCommand name="salvar" action="#{construtoraBean.salvar()}"
 						update="msg" /> -->
 
-					<p:commandButton styleClass="btn-novo" value="Novo Cadastro" update="@form"
-						action="#{construtoraBean.novo()}" />
-					
-					
-					<p:commandButton styleClass="btn-save" value="Salvar Alterações" update="@(.msgForm)"
+					<p:commandButton value="Salvar" update="@(.msgForm)"
 						action="#{construtoraBean.salvar()}" />
+
+					<p:commandButton value="Novo" update="@form"
+						action="#{construtoraBean.novo()}" />
 
 					<!-- 
 					<button type="button" id="contact-submit" onclick="cadastroconstrutora.xhtml">Novo</button>
@@ -283,7 +277,6 @@
 						update="@form" oncomplete="cadastroconstrutora.xhtml" /> -->
 
 				</fieldset>
-				</div>		
 
 
 				<fieldset>
@@ -311,8 +304,6 @@
 				</fieldset>
 			</div>
 		</h:form>
-		</div>
-		<div class="col-sm-1"></div>
 
 		<div class="modal fade" id="dialogoExluirImagem" tabindex="-1"
 			role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -346,15 +337,5 @@
 			</div>
 		</div>
 	</div>
-
-				
-
-				</div>
-			
-				<div class="col-sm-1"></div>
-		
-
-
-	
 
 </f:view>
