@@ -7,7 +7,9 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:o="http://omnifaces.org/ui"
 	xmlns:of="http://omnifaces.org/functions"
-	xmlns:fn="http://java.sun.com/jsp/jstl/functions">    
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+	
+	
 
 	<h:head>
 		<f:facet name="first">
@@ -35,6 +37,8 @@
 	margin: 20px auto;
 }
 </style>
+
+
 
 			<article>
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -68,11 +72,11 @@
 
 					<!-- Left and right controls -->
 					<a class="left carousel-control" href="#myCarousel"
-						data-slide="prev" style="background:none !important;"> <span
+						data-slide="prev" style="background: none !important;"> <span
 						class="glyphicon glyphicon-chevron-left"></span> <span
 						class="sr-only">Previous</span>
 					</a> <a class="right carousel-control" href="#myCarousel"
-						data-slide="next" style="background:none !important;"> <span
+						data-slide="next" style="background: none !important;"> <span
 						class="glyphicon glyphicon-chevron-right"></span> <span
 						class="sr-only">Next</span>
 					</a>
@@ -137,16 +141,18 @@
 					</div>
 				</div>
 			</div>
+			
+			<h:form>
 
 			<div class="wrapper">
 				<div class="container-fluid">
 
 					<div class="row">
-						
-						<div class="btn btn-primary ant " id="ant" onclick="anterior()"> 
+
+						<div class="btn btn-primary ant " id="ant" onclick="anterior()">
 							<a><span class="glyphicon glyphicon-chevron-left "
-								style="color: white;"></span></a>	
-				
+								style="color: white;"></span></a>
+
 						</div>
 
 						<div class="btn btn-primary prox pull-right" id="prox"
@@ -159,9 +165,8 @@
 
 						<div class="row carrossel">
 							<!-- <ui:repeat var="construtora"
-								value="#{portalConstrutoraBean.construtoras}" varStatus="it"> -->
-							<c:forEach items="#{portalConstrutoraBean.construtoras}"
-								var="construtora">
+								value="#{portalBean.construtoras}" varStatus="it"> -->
+							<c:forEach items="#{portalBean.imoveis}" var="imovel" varStatus="i">
 
 								<!-- 	<p:panel styleClass="text-center image box image-full imob-row"
 									style="text-align:center !important;width: 100% !important;"> -->
@@ -173,19 +178,24 @@
 											value="imagemconstrutora?url=#{construtora.urlImagem}" alt=""
 											styleClass="img-fluid img-rounded imob-img" />
 										-->
-										<h:graphicImage
-											value="#{construtora.urlImagem}" alt=""
+										<h:graphicImage value="#{imovel.urlImagem}" alt=""
 											styleClass="img-fluid img-rounded imob-img" />
-										
-										<h3>#{construtora.nomeFantasia}</h3>
 
-										<p class="endereco">#{construtora.endereco==null ?
-											'ENDERECO' : construtora.endereco}</p>
+										<h3>#{imovel.descricao}</h3>
+
+										<p class="endereco">#{imovel.endereco==null ? 'ENDERECO' :
+											imovel.endereco}</p>
 
 										<p:panelGrid columns="1" layout="grid"
 											styleClass="ui-panelgrid-blank ">
-											<button type="button" class="btn btn-light ">#{construtora.anuncio}</button>
-											<a href="compra.xhtml" class="button button-small">Comprar</a>
+											<button type="button" class="btn btn-light ">#{imovel.anuncio}</button>
+<!-- 	<div onclick="clicar(#{i.index});">
+												<a class="button button-small">Comprar</a>
+											</div> -->
+											
+						
+											<p:commandLink action="#{portalBean.mostrarImovel(imovel)}"  styleClass="#{i.index} button button-small" value="Comprar" />
+											
 										</p:panelGrid>
 
 									</div>
@@ -195,7 +205,21 @@
 							</c:forEach>
 							<!--</ui:repeat>  -->
 						</div>
-
+						
+						<script>
+						
+						function clicar(i) {
+														
+							var c = '.'+i;
+							$(c).click();
+							return;
+						}
+								
+							
+												
+					
+											
+						</script>
 
 						<!-- <p:inputText value="#{construtoraBean.indiceCarrossel}"
 								widgetVar="indiceCar" type="hidden"
@@ -240,22 +264,20 @@
 								</div>
 
 							</ui:repeat> -->
-					
-					<div class="btn btn-primary ant pull-left" 
-							onclick="anterior()">
+
+						<div class="btn btn-primary ant pull-left" onclick="anterior()">
 							<a><span class="glyphicon glyphicon-chevron-left"
 								style="color: white;"></span></a>
 						</div>
 
-						<div class="btn btn-primary prox pull-right"
-							onclick="proximo()">
+						<div class="btn btn-primary prox pull-right" onclick="proximo()">
 							<a><span class="glyphicon glyphicon-chevron-right"
 								style="color: white;"></span></a>
 						</div>
-					
-					
+
+
 					</div>
-								<script type="text/javascript">
+					<script type="text/javascript">
 							var slickopts = {
 								dots : true,
 								lazyLoad : 'ondemand',
@@ -294,9 +316,11 @@
 
 							$('.carrossel').slick(slickopts);
 						</script>
-					
+
 				</div>
 			</div>
+			
+			</h:form>
 
 			<!-- https://owlcarousel2.github.io/OwlCarousel2/demos/lazyLoad.html  -->
 			<!-- Javascript no final da página -->
@@ -306,7 +330,7 @@
 		
 			//Função do botão paginação dos corrosseis (para frente)
 		function proximo() {
-			var tam = '#{portalConstrutoraBean.amostras.size()}';
+			var tam = '#{portalBean.amostras.size()}';
 			for (var i = 0; i < tam; i++) {
 				var n = 'car'.concat(i);
 				var paginaAtual = PF(n).page;
@@ -323,7 +347,7 @@
 
 		//Função do botão paginação dos corrosseis (para trás)
 		function anterior() {
-			var tam = '#{portalConstrutoraBean.amostras.size()}';
+			var tam = '#{portalBean.amostras.size()}';
 			
 			for (var i = 0; i < tam; i++) {
 				var n = 'car'.concat(i);
@@ -344,7 +368,7 @@
 
 		jQuery(function() {
 		
-			var tam = '#{portalConstrutoraBean.amostras.size()}';
+			var tam = '#{portalBean.amostras.size()}';
 
 			for (var i = 0; i < tam; i++) {
 				var n = 'car'.concat(i); //id dentro da iteração

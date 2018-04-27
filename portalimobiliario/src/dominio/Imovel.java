@@ -27,6 +27,9 @@ public class Imovel implements Serializable {
 	@Column(length=150)
 	private String descricao;
 	
+	@Column(length = 100)
+	private String anuncio;
+	
 	@ManyToOne
 	@JoinColumn (name="construtora")
 	private Construtora construtora;
@@ -51,6 +54,9 @@ public class Imovel implements Serializable {
 	@OneToMany (mappedBy="imovel")
 	private List<DocumentacaoImovel> documentacao;
 	
+	@Column(length = 500)
+	private String urlImagem;
+	
 	@OneToMany (mappedBy="imovel")
 	private List<GaleriaImovel> galeria;
 	
@@ -72,6 +78,14 @@ public class Imovel implements Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public String getAnuncio() {
+		return anuncio;
+	}
+
+	public void setAnuncio(String anuncio) {
+		this.anuncio = anuncio;
 	}
 
 	public Construtora getConstrutora() {
@@ -132,6 +146,14 @@ public class Imovel implements Serializable {
 		this.documentacao = documentacao;
 	}
 
+	public String getUrlImagem() {
+		return urlImagem;
+	}
+
+	public void setUrlImagem(String urlImagem) {
+		this.urlImagem = urlImagem;
+	}
+	
 	public List<GaleriaImovel> getGaleria() {
 		return galeria;
 	}
@@ -172,7 +194,7 @@ public class Imovel implements Serializable {
 	
 	@Override
 	public String toString() {
-		return descricao;
+		return id + " - " + descricao;
 	}
 
 
