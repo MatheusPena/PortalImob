@@ -28,7 +28,7 @@ html, body
 		margin: 0px;
 		padding: 0px;
 		background: white;
-		font-family: 'Questrial', sans-serif;
+		 font-family:arial,tahoma !important;
 		font-size: 12pt;
 		color: rgba(0,0,0,.6);
 		width:100%;
@@ -368,9 +368,9 @@ select:focus, select:active {
 
 .titulo {
 	color:orange;
-	font-weight: bold;
+	
 	padding-top: 10px;
-	font-family:cursive;
+	 font-family: 'Righteous', cursive;
 }
 
 .descricao1 {
@@ -378,7 +378,8 @@ select:focus, select:active {
 	font-weight: bold;
 	padding-top: 10px;
 	text-align: justify;
-	font-family: cursive	;
+	 font-family:arial,tahoma;
+
 }
 
 .descricao2 {

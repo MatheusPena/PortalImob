@@ -16,6 +16,10 @@
 			<link rel="stylesheet" type="text/css" href="css/slick.css" />
 			<link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
 			<link rel="stylesheet" type="text/css" href="css/style.css" />
+			<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet"/>
+			<link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet"/>
+			<link href="https://fonts.googleapis.com/css?family=Hind+Madurai" rel="stylesheet"/>
+			<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"/>
 		</f:facet>
 	</h:head>
 
@@ -74,19 +78,28 @@
 					<a class="left carousel-control" href="#myCarousel"
 						data-slide="prev" style="background: none !important;"> <span
 						class="glyphicon glyphicon-chevron-left"></span> <span
-						class="sr-only">Previous</span>
+						class="sr-only">Anterior</span>
 					</a> <a class="right carousel-control" href="#myCarousel"
 						data-slide="next" style="background: none !important;"> <span
 						class="glyphicon glyphicon-chevron-right"></span> <span
-						class="sr-only">Next</span>
+						class="sr-only">Próximo</span>
 					</a>
 				</div>
 			</article>
 
 
 			<div class="page-wrapper">
-
 				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-1 filter-header">
+							<h2>Filtros</h2>
+						</div>				
+					</div>
+				</div>
+				
+				
+				
+				<div class="container-fluid filters">
 					<div class="row">
 						<div class="col-sm-4">
 							<h:form id="navbar-form">
@@ -99,67 +112,79 @@
 								</div>
 							</h:form>
 						</div>
-
-						<div class="btn-filter">
-							<select id="blue">
-								<optgroup label="Maranhão">
-									<option selected="selected">Todos os Bairros</option>
-								</optgroup>
-
-								<optgroup label="São Luís">
-									<option>Cohama</option>
-									<option>Renascença</option>
-									<option>Cohab</option>
-								</optgroup>
-
-								<optgroup label="São José de Ribamar">
-									<option>Parque Vitória</option>
-									<option>Parque Jair</option>
-								</optgroup>
-							</select> <select id="green">
-								<optgroup label="Imóvel">
-									<option selected="selected">Todos os Imóveis</option>
-								</optgroup>
-
-								<optgroup label="Para Alugar">
-									<option selected="selected">Todos os Imóveis</option>
-									<option>Plaza Residence</option>
-								</optgroup>
-
-								<optgroup label="Para Comprar">
-									<option>Residence Evil</option>
-								</optgroup>
-							</select> <select id="red">
-								<optgroup label="Tipo de Imóvel">
-									<option selected="selected">Todos os Tipos</option>
-									<option>Casa</option>
-									<option>Apartamento</option>
-								</optgroup>
-							</select>
-						</div>
-
+							
+							<div class="col-sm-8">		
+							<div class="btn-group">
+							  <button type="button" id="filter-btn" class="btn btn-Light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    Todos os Bairros <span class="caret"></span>
+							  </button>
+							  <div class="dropdown-menu">
+							    <div class="dropdown-divider"></div>
+							    <a class="dropdown-item" href="#">Renascença</a>
+							    <div class="dropdown-divider"></div>
+							    <a class="dropdown-item" href="#">Cohatrac</a>
+							    <div class="dropdown-divider"></div>			   
+								<a class="dropdown-item" href="#">Cohama</a>
+							  </div>
+							</div>
+							<div class="btn-group">
+							  <button type="button" id="filter-btn" class="btn btn-Light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    Todos os Imóveis <span class="caret"></span>
+							  </button>
+							  <div class="dropdown-menu">
+							   <div class="dropdown-divider"></div>
+							   <a class="dropdown-item" href="#">Para Comprar</a>							    
+							   <div class="dropdown-divider"></div>
+							   <a class="dropdown-item" href="#">Para Alugar</a>
+							  </div>
+							</div>
+							<div class="btn-group">
+							  <button type="button" id="filter-btn" class="btn btn-Light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    Todos os Tipos <span class="caret"></span>
+							  </button>
+							  <div class="dropdown-menu">
+							    <div class="dropdown-divider"></div>
+							     <a class="dropdown-item" href="#">Apartamento</a>
+							    <div class="dropdown-divider"></div>
+							     <a class="dropdown-item" href="#">Casa</a>
+							  </div>
+							</div>
+							<div class="btn-group">
+							  <button type="button" id="filter-btn" class="btn btn-Light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    Todas as Construtoras <span class="caret"></span>
+							  </button>
+						
+							  <div class="dropdown-menu">
+							     <div class="dropdown-divider"></div>
+							    <a class="dropdown-item" href="#">Construtora 1</a>
+							    <div class="dropdown-divider"></div>
+							    <a class="dropdown-item" href="#">Construtora 2</a>
+							    <div class="dropdown-divider"></div>
+							    <a class="dropdown-item" href="#">Construtora 3</a>
+							    <div class="dropdown-divider"></div>
+							    <a class="dropdown-item" href="#">Construtora 4</a>
+						
+							</div>
+							</div>
+						</div>										
 					</div>
+				  </div>
 				</div>
-			</div>
+		
 			
 			<h:form>
 
 			<div class="wrapper">
+			<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-1">
+							<h2>Imóveis</h2>
+						</div>				
+					</div>
+				</div>
 				<div class="container-fluid">
 
 					<div class="row">
-
-						<div class="btn btn-primary ant " id="ant" onclick="anterior()">
-							<a><span class="glyphicon glyphicon-chevron-left "
-								style="color: white;"></span></a>
-
-						</div>
-
-						<div class="btn btn-primary prox pull-right" id="prox"
-							onclick="proximo()">
-							<a><span class="glyphicon glyphicon-chevron-right"
-								style="color: white;"></span></a>
-						</div>
 
 						<script type="text/javascript" src="js/slick.min.js"></script>
 
@@ -186,16 +211,14 @@
 										<p class="endereco">#{imovel.endereco==null ? 'ENDERECO' :
 											imovel.endereco}</p>
 
-										<p:panelGrid columns="1" layout="grid"
-											styleClass="ui-panelgrid-blank ">
+										<p:panelGrid styleClass="ui-panelgrid-blank">
+											<div class="text-center">
 											<button type="button" class="btn btn-light ">#{imovel.anuncio}</button>
-<!-- 	<div onclick="clicar(#{i.index});">
+												<!-- 	<div onclick="clicar(#{i.index});">
 												<a class="button button-small">Comprar</a>
-											</div> -->
-											
-						
-											<p:commandLink action="#{portalBean.mostrarImovel(imovel)}"  styleClass="#{i.index} button button-small" value="Comprar" />
-											
+														</div> -->
+											<p:commandLink action="#{portalBean.mostrarImovel(imovel)}"  styleClass="#{i.index} button button-small" value="COMPRAR" />
+											</div>
 										</p:panelGrid>
 
 									</div>
