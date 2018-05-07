@@ -72,42 +72,72 @@
 						<h3>Cadastrar Imóvel</h3>
 						<h4>Dados do Imóvel</h4>
 						<fieldset>
-							<input placeholder="Nome do imóvel" type="text" tabindex="1"
-								required="required" autofocus="autofocus" />
+							<h:inputText id="nomeimovel" type="text" tabindex="1" required="true" autofocus="autofocus">
+								<f:passThroughAttribute name="placeholder" value="Nome do Imóvel" />
+								<f:validateLength minimum="2" />
+							</h:inputText>
 						</fieldset>
 						<fieldset>
-							<textarea placeholder="Descrição do imóvel" tabindex="2"
-								required="required"></textarea>
+							<p:inputTextarea id="descimovel" tabindex="2" required="true" autofocus="autofocus">
+							<f:passThroughAttribute name="placeholder" value="Descrição do Imóvel" />
+							</p:inputTextarea>
 						</fieldset>
 						<fieldset>
-							<input placeholder="Preço do imóvel" type="text" tabindex="5"
-								required="required" />
+							<h:inputText id="precoimovel" type="text" tabindex="3" required="true" autofocus="autofocus">
+								<f:passThroughAttribute name="placeholder" value="Preço do Imóvel" />
+							</h:inputText>
 						</fieldset>
 						<h4>Endereço do Imóvel</h4>
 						<fieldset>
-							<input placeholder="Estado" type="text" tabindex="3"
-								required="required" />
+							<h:inputText id="estadoimovel" type="text" tabindex="4" required="true" autofocus="autofocus">
+								<f:passThroughAttribute name="placeholder" value="Estado" />
+							</h:inputText>
 						</fieldset>
 						<fieldset>
-							<input placeholder="Cidade" type="text" tabindex="4"
-								required="required" />
+							<h:inputText id="cidadeimovel" type="text" tabindex="5" required="true" autofocus="autofocus">
+								<f:passThroughAttribute name="placeholder" value="Cidade" />
+							</h:inputText>
 						</fieldset>
 						<fieldset>
-							<input placeholder="Bairro" type="text" tabindex="5"
-								required="required" />
+							<h:inputText id="bairroimovel" type="text" tabindex="6" required="true" autofocus="autofocus">
+								<f:passThroughAttribute name="placeholder" value="Bairro" />
+							</h:inputText>
 						</fieldset>
 						<fieldset>
-							<input placeholder="Rua" type="text" tabindex="5"
-								required="required" />
+							<h:inputText id="ruaimovel" type="text" tabindex="7" required="true" autofocus="autofocus">
+								<f:passThroughAttribute name="placeholder" value="Rua" />
+							</h:inputText>
 						</fieldset>
 						<fieldset>
-							<input placeholder="CEP" type="text" tabindex="5" />
+							<h:inputText id="cep" type="text" tabindex="8" required="true" autofocus="autofocus">
+								<f:passThroughAttribute name="placeholder" value="CEP" />
+							</h:inputText>
 						</fieldset>
 						<h4>Imagens do imóvel</h4>
+						
 						<div>
-							<input type="file" name="image" /> <input type="file"
-								name="image" /> <input type="file" name="image" /> <input
-								type="file" name="image" />
+							
+							<p:commandButton icon="fa fa-plus" styleClass="form-control btn-plus" style="background-color: #38506A;"
+								update="@(.txtCNPJ) @(.btnExcluirImagem)" process="@(.txtCNPJ)"
+								onclick="clicar()">
+							</p:commandButton>
+						
+							<p:commandButton icon="fa fa-trash" style="background-color: red;"
+								onclick="$('.btnAbriDialogo').click()"
+								update="@(.displayExcluirImagem)" process="@this"
+								styleClass="btnExcluirImagem form-control">
+
+								<f:setPropertyActionListener
+									value="#{imovelBean.construtora.urlImagem}"
+									target="#{imovelBean.urlImagem}" />
+
+									<!-- botão bootstrap auxiliar, fica invisível e é chamado via javascript -->
+							<button style="display: none;" type="button"
+								class="btn btn-primary btnAbriDialogo form-control"
+								data-toggle="modal" data-target="#dialogoExluirImagem" />
+							
+							
+							</p:commandButton>
 						</div>
 
 						<br></br>
@@ -116,18 +146,18 @@
 
 
 						<fieldset>
-							<button name="submit" type="submit" id="contact-submit"
-								data-submit="...Sending">Enviar</button>
+							<p:commandButton name="submit" value="Enviar" type="submit" id="contact-submit"
+								data-submit="...Sending"></p:commandButton>
 						</fieldset>
 
 					</div>
 				</div>
 
-</h:form>
-				<div class="col-sm-6">
-	<h:form>			
-				
-				<h3>Tabela de Imóveis</h3>
+			</h:form>
+			
+<div class="col-sm-6">				
+	<h:form>				
+		<h3>Tabela de Imóveis</h3>
 
 					<p:dataTable
 							rows="1" lazy="true"
@@ -197,7 +227,7 @@
 				<div class="container">
     <div class="row clearfix">
     	<div class="col-md-12 table-responsive">
-			<table class="table table-bordered table-hover table-sortable" id="tab_logic">
+			<table class="table table-hover table-sortable" id="tab_logic">
 				<thead>
 					<tr >
 						<th class="text-center">
@@ -224,14 +254,14 @@
 			</table>
 		</div>
 	</div>
-	<a id="add_row" class="btn btn-default pull-right">Add Row</a>
+	<div id="add_row" class="btn btn-warning pull-right">Adicionar Atributo</div>
 </div>
 				
 </h:form>
-				</div>
-				</div>
-				<div class="col-sm-1"></div>
-			</div>
+</div>
+</div>
+<div class="col-sm-1"></div>
+</div>
 
 
 
