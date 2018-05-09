@@ -105,9 +105,8 @@ html, body
 }
 
 .btn-group:hover {
-   background-color:#38506A;
-   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-   color: white;
+
+   box-shadow: 0 9px 11px 0 rgba(0,0,0,0.24), 0 5px 15px 0 rgba(0,0,0,0.19);
 }
 .btn-group h4 {
 	color: inherit;
@@ -115,20 +114,45 @@ html, body
 
 .dropdown-menu {
 	text-align:center;
-	background-color: #38506A;
+	background-color: #38506A;;
 	color:white !important;
+	
 }
 
 #filter-btn {
 	height:40px;
 	width:180px;
-	background-color: #38506A;
-	color: white;
+	background-color: #e7e7e7;
+	color: gray;
 	
+}
+
+#filter-btn:hover {
+	background-color:#38506A;
+	color:white;
+	-webkit-transition:0.5s ease all;
+	   -moz-transition:0.5s ease all;
+	    -ms-transition:0.5s ease all;
+	     -o-transition:0.5s ease all;
+	        transition:0.5s ease all;
+
+}
+
+#filter-btn:focus {
+	background-color:#38506A;
+	color:white;
+
 }
 
 .dropdown-item {
 	color:white;
+	
+
+}
+
+.dropdown-item:hover {
+	color:white !important;
+	
 
 }
 
@@ -237,7 +261,6 @@ html, body
 	.button-small
 	{
 		display: inline-block;
-
 		padding: 0.8em 2em;
 		background: #38506A;
 		line-height: 1.8em;
@@ -257,6 +280,12 @@ html, body
 					transition:0.3s ease all;
 					margin:10px auto;
 
+	}
+	
+	.button-small:hover {
+	background-color: orange !important;
+	color:white !important;
+	
 	}
 
 	.btn-default {

@@ -26,7 +26,7 @@
 	            
 	            var children = cur_td.children();
 	            
-	            // add new td and element if it has a nane
+	            // add new td and element if it has a name
 	            if ($(this).data("name") != undefined) {
 	                var td = $("<td></td>", {
 	                    "data-name": $(cur_td).data("name")
