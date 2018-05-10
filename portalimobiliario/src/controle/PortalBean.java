@@ -204,14 +204,14 @@ public class PortalBean implements Serializable {
 		Imovel r13 = new Imovel();
 		r13.setDescricao("Plaza das Flores Village");
 		// r13.setEndereco("Estrada da Guaíba , s/n, Iguaíba, Iguaíba");
-		r13.setUrlImagem("imagens/scr13.jpg");
+		r13.setUrlImagem("imagens/scr09.jpg");
 		r13.setAnuncio("A partir de R$200.000");
 		r13.setEndereco(e);
 
 		Imovel r14 = new Imovel();
 		r14.setDescricao("Village das Palmeiras Prime");
 		// r14.setEndereco("Rua Projetada, Cohama, Cohama");
-		r14.setUrlImagem("imagens/scr14.jpg");
+		r14.setUrlImagem("imagens/scr02.jpg");
 		r14.setAnuncio("A partir de R$200.000");
 		r14.setEndereco(e);
 
